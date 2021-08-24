@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
 void main() {
+  
   runApp(MyApp());
 }
 
