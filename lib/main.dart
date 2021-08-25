@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secure_banking/ui/screen/home_page.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:TransactionViewWidget(),
+      home:HomePage(),
     );
   }
 }
