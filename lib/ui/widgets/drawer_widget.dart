@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:secure_banking/constant/constant_public.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -9,41 +9,52 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        color: Colors.black,
-        child: ListView(
-          children: [
-            DrawerHeader(
-              child: Image.network('https://picsum.photos/250?image=9'),
-            ),
-            DrawerListTile(
-              title: "Dashboard",
-              // svgSrc: "assets/icons/menu_dashbord.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Accounts",
-              // svgSrc: "assets/icons/menu_tran.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Transaction",
-              // svgSrc: "assets/icons/menu_task.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Secure",
-              // svgSrc: "assets/icons/menu_doc.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Settings",
-              // svgSrc: "assets/icons/menu_store.svg",
-              press: () {},
-            ),
-            Image.network('https://picsum.photos/250?image=9')
-          ],
-        ),
+      child: Column(
+        children: [
+          /*DrawerHeader(
+            child: Image.network('https://picsum.photos/250?image=9'),
+          ),*/
+          SizedBox(
+            height: 20,
+          ),
+          DrawerListTile(
+            title: kSecureBanking,
+            // svgSrc: "assets/icons/menu_dashbord.svg",
+            press: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(kSecureBanking)));
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          DrawerListTile(
+            title: kDashboard,
+            // svgSrc: "assets/icons/menu_dashbord.svg",
+            press: () {},
+          ),
+          DrawerListTile(
+            title: kAccounts,
+            // svgSrc: "assets/icons/menu_tran.svg",
+            press: () {},
+          ),
+          DrawerListTile(
+            title: kTransaction,
+            // svgSrc: "assets/icons/menu_task.svg",
+            press: () {},
+          ),
+          DrawerListTile(
+            title: kSecure,
+            // svgSrc: "assets/icons/menu_doc.svg",
+            press: () {},
+          ),
+          DrawerListTile(
+            title: kSettings,
+            // svgSrc: "assets/icons/menu_store.svg",
+            press: () {},
+          ),
+          Spacer(),
+          Image.network('https://picsum.photos/250?image=9')
+        ],
       ),
     );
   }
@@ -58,7 +69,10 @@ class DrawerListTile extends StatelessWidget {
     required this.press,
   }) : super(key: key);
 
-  final String title/*, svgSrc*/;
+  final String title
+
+      /*, svgSrc*/;
+
   final VoidCallback press;
 
   @override
@@ -73,7 +87,7 @@ class DrawerListTile extends StatelessWidget {
       ),*/
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: TextStyle(color: Colors.black),
       ),
     );
   }
