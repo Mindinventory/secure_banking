@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.red,
       body: SafeArea(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // We want this side menu only for large screen
@@ -45,12 +46,17 @@ class _HomePageState extends State<HomePage> {
                 width: width1,
                 child: SideMenu(),
               ),
-            AnimatedContainer(
+           /* AnimatedContainer(
               duration: _duration,
               width: Responsive.isDesktop(context)
                   ? width2
                   : pWidth,
               color: Colors.red,
+            ),*/
+            AnimatedContainer(
+              duration: _duration,
+              child: TransactionViewWidget(),
+              width: width1,
             ),
           ],
         ),
