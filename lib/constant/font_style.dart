@@ -10,8 +10,8 @@ class AppFontStyle {
     return TextStyle(
         color: color,
         fontFamily: 'Rubik',
-        fontSize: 15.0,
-        fontWeight: FontWeight.normal
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold
     );
   }
 
