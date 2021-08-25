@@ -8,8 +8,11 @@ class TransactionViewWidget extends StatefulWidget {
 }
 
 class _TransactionViewWidgetState extends State<TransactionViewWidget> {
+
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body:Row(
