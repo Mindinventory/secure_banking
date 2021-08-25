@@ -24,13 +24,19 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 // default flex = 1
                 // and it takes 1/6 part of the screen
+                flex:2,
                 child: SideMenu(),
               ),
             Expanded(
-              // It takes 5/6 part of the screen
-              flex: 5,
-              child: Container(color: Colors.red,)//DashboardScreen(),
-            ),
+                // It takes 5/6 part of the screen
+                flex: 5,
+                child: Container(
+                  color: Colors.red,
+                ) //DashboardScreen(),
+                ),
+            Expanded(
+                flex: 2,
+                child: TransactionViewWidget())
           ],
         ),
       ),
