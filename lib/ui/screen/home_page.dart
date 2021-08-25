@@ -11,13 +11,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Duration _duration = Duration(milliseconds: 500);
+  late Duration _duration;
   int _flex1 = 1, _flex2 = 5
 
       /*, _flex3 = 1*/;
 
   @override
   void initState() {
+    _duration = Duration(milliseconds: 500);
     super.initState();
   }
 
@@ -40,10 +41,12 @@ class _HomePageState extends State<HomePage> {
           children: [
             // We want this side menu only for large screen
             if (Responsive.isDesktop(context))
-              AnimatedContainer(
-                duration: _duration,
-                width: width1,
-                child: SideMenu(),
+              Expanded(
+                child: AnimatedContainer(
+                  duration: _duration,
+                  width: width1,
+                  child: SideMenu(),
+                ),
               ),
             AnimatedContainer(
               duration: _duration,

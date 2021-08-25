@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:secure_banking/constant/constant_public.dart';
+import 'package:secure_banking/model/drawer_item_list.dart';
 
-class SideMenu extends StatelessWidget {
+class SideMenu extends StatefulWidget {
   const SideMenu({
     Key? key,
   }) : super(key: key);
+
+  @override
+  _SideMenuState createState() => _SideMenuState();
+}
+
+class _SideMenuState extends State<SideMenu> {
+  List<TilesDataModel> tileList = [];
+
+  @override
+  void initState() {
+    tileList.addAll(TilesDataModel.getTilesData());
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +36,35 @@ class SideMenu extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          DrawerListTile(
+          Expanded(
+            flex: 8,
+            child: ListView.builder(
+                shrinkWrap: true,
+                primary: false,
+                itemCount: tileList.length,
+                itemBuilder: (BuildContext context, i) {
+                  return DrawerListTile(
+                      title: tileList[i].title,
+                      // title: tileList[i],
+                      press: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(tileList[i].title),),);
+                        /*setState(() {
+                      tileList.forEach((element) {
+                        if(element.contains());
+                      });
+                      tileList[i].isPressed = true;
+                    }*/
+
+                      });
+                }),
+          ),
+          /*DrawerListTile(
             title: kSecureBanking,
             // svgSrc: "assets/icons/menu_dashbord.svg",
             press: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(kSecureBanking)));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(kSecureBanking)));
             },
           ),
           SizedBox(
@@ -51,9 +94,11 @@ class SideMenu extends StatelessWidget {
             title: kSettings,
             // svgSrc: "assets/icons/menu_store.svg",
             press: () {},
-          ),
-          Spacer(),
-          Image.network('https://picsum.photos/250?image=9')
+          ),*/
+          // Spacer(),
+          Expanded(
+              flex: 3,
+              child: Image.network('https://picsum.photos/250?image=9'))
         ],
       ),
     );
@@ -71,7 +116,7 @@ class DrawerListTile extends StatelessWidget {
 
   final String title
 
-      /*, svgSrc*/;
+  /*, svgSrc*/;
 
   final VoidCallback press;
 
