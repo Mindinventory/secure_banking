@@ -15,7 +15,7 @@ class AssetImages {
 
 
   // static const String userIcon = 'assets/images/user.svg';
-  static const String cardImg = 'assets/images/card.png';
+  // static const String cardImg = 'assets/images/card.png';
 
   ///Dashboard
   static const String ic_bank = 'assets/icons/ic_bank.svg';

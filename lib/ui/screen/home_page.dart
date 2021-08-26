@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/responsive.dart';
+import 'package:secure_banking/ui/screen/dashboard_page.dart';
 import 'package:secure_banking/ui/widgets/drawer_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
@@ -13,8 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late Duration _duration;
   int _flex1 = 1, _flex2 = 5
-
-      /*, _flex3 = 1*/;
 
   @override
   void initState() {
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
             AnimatedContainer(
               duration: _duration,
               child: DashBoardPage(),
-              //width: width1,
+              width: width2,
             ),
           ],
         ),

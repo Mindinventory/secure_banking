@@ -25,8 +25,8 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
     var screenSize = MediaQuery.of(context).size;
     return Container(
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width/5.3,
-      margin: EdgeInsets.only(top: 80, bottom: 10,right:15),
+      width: MediaQuery.of(context).size.width / 5.3,
+      margin: EdgeInsets.only(top: 80, bottom: 10, right: 15),
       child: Card(
         color: AppColors.lightGray,
         shape: RoundedRectangleBorder(
@@ -47,7 +47,11 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     "Transaction",
                     style: AppFontStyle.fontStyles(color: AppColors.textColor),
                   ),
-                 Image.asset(AssetImages.addImg,height:30,width:30,)
+                  Image.asset(
+                    AssetImages.addImg,
+                    height: 30,
+                    width: 30,
+                  )
                 ],
               ),
             ),
@@ -80,23 +84,25 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                                 fontWeight: FontWeight.w400))
                       ],
                     ),
-                    trailing: Text("- "+String.fromCharCodes(Runes('\u0024'))+transactionList.price,style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor,
-                        fontSize: 14)),
+                    trailing: Text(
+                        "- " +
+                            String.fromCharCodes(Runes('\u0024')) +
+                            transactionList.price,
+                        style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor, fontSize: 14)),
                   ),
                 );
               },
             ),
             Padding(
-              padding: EdgeInsets.only(top: 18, left: 18, bottom: 10,right:18),
+              padding:
+                  EdgeInsets.only(top: 18, left: 18, bottom: 10, right: 18),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "My Card",
-                      style: AppFontStyle.fontStyles(
-                          color: AppColors.textColor)
-                  ),
+                  Text("My Card",
+                      style:
+                          AppFontStyle.fontStyles(color: AppColors.textColor)),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -109,9 +115,6 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
             ),
             SvgPicture.asset(
               AssetImages.cardImg,
-              height: 250,
-              width: 100,
-              fit: BoxFit.cover,
             )
           ],
         ),
@@ -119,8 +122,6 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
     );
   }
 }
-
-
 
 class PremiumCardImageWidget extends StatelessWidget {
   const PremiumCardImageWidget({Key? key}) : super(key: key);
@@ -133,4 +134,3 @@ class PremiumCardImageWidget extends StatelessWidget {
     );
   }
 }
-
