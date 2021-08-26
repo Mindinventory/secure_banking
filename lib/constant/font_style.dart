@@ -9,11 +9,22 @@ class AppFontStyle {
   static TextStyle textFiledNormal({Color color = Colors.black}) {
     return TextStyle(
         color: color,
-        fontFamily: 'Rubik',
-        fontSize: 20.0,
-        fontWeight: FontWeight.bold
+        fontFamily: 'Poppins',
+        fontSize: 22.0,
+        fontWeight: FontWeight.w600
     );
   }
+
+  static TextStyle fontStyles({Color color = Colors.black,double fontSize = 22.0,FontWeight fontWeight = FontWeight.w600}) {
+    return TextStyle(
+        color: color,
+        fontFamily: 'Poppins',
+        fontSize: fontSize,
+        fontWeight: fontWeight
+    );
+  }
+
+
 
   static const customAlertTitle = TextStyle(
       color: Colors.black,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:secure_banking/constant/color_constant.dart';
+import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/responsive.dart';
+import 'package:secure_banking/ui/screen/dashboard_page.dart';
 import 'package:secure_banking/ui/widgets/drawer_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
@@ -14,8 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late Duration _duration;
   int _flex1 = 1, _flex2 = 5
-
-      /*, _flex3 = 1*/;
 
   @override
   void initState() {
@@ -37,6 +36,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // We want this side menu only for large screen
@@ -49,12 +49,17 @@ class _HomePageState extends State<HomePage> {
                   child: SideMenu(),
                 ),
               ),
-            AnimatedContainer(
+           /* AnimatedContainer(
               duration: _duration,
               width: Responsive.isDesktop(context)
                   ? width2
                   : pWidth,
-              child: TransactionViewWidget(),
+              color: Colors.red,
+            ),*/
+            AnimatedContainer(
+              duration: _duration,
+              child: DashBoardPage(),
+              width: width2,
             ),
           ],
         ),

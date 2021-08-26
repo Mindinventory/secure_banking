@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/model/transaction_item_list_model.dart';
 
@@ -10,37 +11,46 @@ class TransactionViewWidget extends StatefulWidget {
 }
 
 class _TransactionViewWidgetState extends State<TransactionViewWidget> {
-
   List<TransactionItemListModel> getTransactionListData = [];
 
   @override
   void initState() {
-    getTransactionListData.addAll(TransactionItemListModel.fetchAllTransactionListData());
+    getTransactionListData
+        .addAll(TransactionItemListModel.fetchAllTransactionListData());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return  Container(
+    return Container(
       height: MediaQuery.of(context).size.height,
-      margin: EdgeInsets.only(top:80,bottom:10),
+      width: MediaQuery.of(context).size.width / 5.3,
+      margin: EdgeInsets.only(top: 80, bottom: 10, right: 15),
       child: Card(
         color: AppColors.lightGray,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            side: BorderSide(width: 5,color:  AppColors.lightGray,)),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            side: BorderSide(
+              width: 5,
+              color: AppColors.lightGray,
+            )),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(18.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Transaction",style: AppFontStyle.textFiledNormal(),),
-                  IconButton(
-                    onPressed: (){},
-                    icon: Icon(Icons.add,size:25,),
+                  Text(
+                    "Transaction",
+                    style: AppFontStyle.fontStyles(color: AppColors.textColor),
+                  ),
+                  Image.asset(
+                    AssetImages.addImg,
+                    height: 30,
+                    width: 30,
                   )
                 ],
               ),
@@ -49,42 +59,78 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
               itemCount: getTransactionListData.length,
               shrinkWrap: true,
               primary: false,
-              itemBuilder: (context,index) {
-                TransactionItemListModel transactionList =  getTransactionListData[index];
+              itemBuilder: (context, index) {
+                TransactionItemListModel transactionList =
+                    getTransactionListData[index];
                 return Padding(
-                  padding: EdgeInsets.only(bottom:10),
+                  padding: EdgeInsets.only(bottom: 15),
                   child: ListTile(
-                    leading: FlutterLogo(),
+                    leading: SvgPicture.asset(transactionList.icon),
                     title: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(transactionList.itemName),
-                        SizedBox(height:2,),
-                        Text(transactionList.timing)
+                        Text(
+                          transactionList.itemName,
+                          style: AppFontStyle.fontStyles(
+                              color: AppColors.textColor, fontSize: 16),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Text(transactionList.timing,
+                            style: AppFontStyle.fontStyles(
+                                color: AppColors.textColor,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w400))
                       ],
                     ),
-                    trailing: Text(transactionList.price),
+                    trailing: Text(
+                        "- " +
+                            String.fromCharCodes(Runes('\u0024')) +
+                            transactionList.price,
+                        style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor, fontSize: 14)),
                   ),
                 );
               },
             ),
             Padding(
-              padding: EdgeInsets.only(top:10,left:10,bottom:10),
+              padding:
+                  EdgeInsets.only(top: 18, left: 18, bottom: 10, right: 18),
               child: Row(
-                mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("My Card",style:AppFontStyle.customAlertTitle,),
+                  Text("My Card",
+                      style:
+                          AppFontStyle.fontStyles(color: AppColors.textColor)),
                   IconButton(
-                    onPressed: (){},
-                    icon: Icon(Icons.more_horiz,size: 20,),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.more_horiz,
+                      size: 20,
+                    ),
                   ),
                 ],
               ),
             ),
-            Image.asset(AssetImages.cardImg),
+            SvgPicture.asset(
+              AssetImages.cardImg,
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class PremiumCardImageWidget extends StatelessWidget {
+  const PremiumCardImageWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(20.0),
+      child: SvgPicture.asset(AssetImages.preimumCardImag),
     );
   }
 }
