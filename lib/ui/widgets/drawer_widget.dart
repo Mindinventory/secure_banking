@@ -45,8 +45,8 @@ class _SideMenuState extends State<SideMenu> {
               ),
               SvgPicture.asset(
                 AssetImages.ic_bank,
-                height: 50.0,
-                width: 50.0,
+                height: 40.0,
+                width: 40.0,
               ),
               SizedBox(
                 width: 10,
@@ -130,16 +130,19 @@ class DrawerListTile extends StatelessWidget {
             blurRadius: 6.0,
           ),
         ],
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(10.0),
         color: tileData.isPressed ? Colors.white : Colors.transparent,
       ),
       child: ListTile(
         onTap: press,
         leading: SvgPicture.asset(
           tileData.icons,
+          height: 20,
+          width: 20,
         ),
         title: Text(
           tileData.title,
+          textAlign: TextAlign.start,
           style: TextStyle(
             fontSize: 16.0,
             color: tileData.isPressed ? Colors.black : Colors.lightBlue,
