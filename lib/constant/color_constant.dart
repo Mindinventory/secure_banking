@@ -14,6 +14,12 @@ class AppColors {
 
   static const Color textColor = Color(0xFF00294F);
 
+  static const Color bgDrawer = Color(0XFF7F8FF);
+  static const Color icSelected = Color(0XF0dc8e9);
+  static const Color icNotSelected = Color(0XF6d87e5);
+  static const Color drawerTextSelected = Color(0XF002A50);
+  static const Color drawerTextNotSelected = Color(0XF6D87E5);
+
   /// Dynamic colors as per the selected theme.
   static Color get background {
     return isLightMode ? Colors.red : Colors.blue;

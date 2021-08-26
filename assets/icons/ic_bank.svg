@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="57" viewBox="0 0 57 57">
+  <g id="Group_3" data-name="Group 3" transform="translate(-220 -328)">
+    <g id="Group_153" data-name="Group 153">
+      <rect id="Rectangle_13" data-name="Rectangle 13" width="57" height="57" rx="16" transform="translate(220 328)" fill="#2349d0" opacity="0.17"/>
+    </g>
+    <g id="banking" transform="translate(234 341.988)">
+      <g id="Layer_1_78_" transform="translate(0 0.012)">
+        <g id="Group_2" data-name="Group 2">
+          <path id="Path_7" data-name="Path 7" d="M28.624,42.718H1.363a1.363,1.363,0,0,0,0,2.727h27.26a1.363,1.363,0,0,0,0-2.727Z" transform="translate(0 -15.459)" fill="#2349d0"/>
+          <path id="Path_8" data-name="Path 8" d="M4.032,29.441a1.364,1.364,0,0,0,0,2.727H27.885a1.364,1.364,0,0,0,0-2.727h-.34V17.173h.34a.681.681,0,0,0,0-1.362H4.032a.681.681,0,0,0,0,1.362h.341V29.44H4.032ZM24.818,17.173V29.44H20.729V17.173Zm-6.816,0V29.44H13.914V17.173Zm-10.9,0h4.089V29.44H7.1Z" transform="translate(-0.965 -5.726)" fill="#2349d0"/>
+          <path id="Path_9" data-name="Path 9" d="M1.363,8.871H28.637a1.364,1.364,0,0,0,.442-2.653L15.554.131a1.366,1.366,0,0,0-1.118,0L.8,6.264a1.363,1.363,0,0,0,.559,2.606Z" transform="translate(0 -0.012)" fill="#2349d0"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
