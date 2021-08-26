@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/model/drawer_item_list.dart';
 
@@ -12,11 +13,11 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
-  List<TilesDataModel> tileList = [];
+  List<TilesDataModel> _tileList = [];
 
   @override
   void initState() {
-    tileList.addAll(TilesDataModel.getTilesData());
+    _tileList.addAll(TilesDataModel.getTilesData());
     super.initState();
   }
 
@@ -29,6 +30,7 @@ class _SideMenuState extends State<SideMenu> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /*DrawerHeader(
             child: Image.network('https://picsum.photos/250?image=9'),
@@ -36,103 +38,113 @@ class _SideMenuState extends State<SideMenu> {
           SizedBox(
             height: 20,
           ),
-          Expanded(
-            flex: 8,
-            child: ListView.builder(
-                shrinkWrap: true,
-                primary: false,
-                itemCount: tileList.length,
-                itemBuilder: (BuildContext context, i) {
-                  return DrawerListTile(
-                      title: tileList[i].title,
-                      // title: tileList[i],
-                      press: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(tileList[i].title),),);
-                        /*setState(() {
-                      tileList.forEach((element) {
-                        if(element.contains());
-                      });
-                      tileList[i].isPressed = true;
-                    }*/
-
-                      });
-                }),
-          ),
-          /*DrawerListTile(
-            title: kSecureBanking,
-            // svgSrc: "assets/icons/menu_dashbord.svg",
-            press: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(kSecureBanking)));
-            },
+          Row(
+            children: [
+              SizedBox(
+                width: 25,
+              ),
+              SvgPicture.asset(
+                AssetImages.ic_bank,
+                height: 50.0,
+                width: 50.0,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                kSecureBanking,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black,
+                ),
+              )
+            ],
           ),
           SizedBox(
             height: 20,
           ),
-          DrawerListTile(
-            title: kDashboard,
-            // svgSrc: "assets/icons/menu_dashbord.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: kAccounts,
-            // svgSrc: "assets/icons/menu_tran.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: kTransaction,
-            // svgSrc: "assets/icons/menu_task.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: kSecure,
-            // svgSrc: "assets/icons/menu_doc.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: kSettings,
-            // svgSrc: "assets/icons/menu_store.svg",
-            press: () {},
-          ),*/
-          // Spacer(),
           Expanded(
-              flex: 3,
-              child: Image.network('https://picsum.photos/250?image=9'))
+            flex: 8,
+            child: ListView.builder(
+              shrinkWrap: true,
+              primary: false,
+              itemCount: _tileList.length,
+              itemBuilder: (BuildContext context, i) {
+                return DrawerListTile(
+                  tileData: _tileList[i],
+                  press: () => _listTileClick(i, context),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Image.asset(
+              AssetImages.drawerBottom,
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  void _listTileClick(int i, BuildContext context) {
+    setState(() {
+      var index = _tileList.indexWhere((element) => element.isPressed == true);
+      if (index >= 0) {
+        _tileList[index].isPressed = false;
+      }
+      _tileList[i].isPressed = true;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(_tileList[i].title),
+        duration: Duration(milliseconds: 300),
+      ));
+    });
   }
 }
 
 class DrawerListTile extends StatelessWidget {
   const DrawerListTile({
     Key? key,
-    // For selecting those three line once press "Command+D"
-    required this.title,
-    // required this.svgSrc,
+    required this.tileData,
     required this.press,
   }) : super(key: key);
 
-  final String title
-
-  /*, svgSrc*/;
-
+  final TilesDataModel tileData;
   final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: press,
-      horizontalTitleGap: 0.0,
-      /*leading: SvgPicture.asset(
-        svgSrc,
-        color: Colors.white54,
-        height: 16,
-      ),*/
-      title: Text(
-        title,
-        style: TextStyle(color: Colors.black),
+    var _width = MediaQuery.of(context).size.width;
+    return Container(
+      margin:
+          EdgeInsets.only(left: _width * 0.01, right: _width * 0.01, bottom: 8),
+      padding: const EdgeInsets.symmetric(
+        vertical: 8,
+      ),
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: tileData.isPressed ? Colors.grey : Colors.white,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: 6.0,
+          ),
+        ],
+        borderRadius: BorderRadius.circular(15.0),
+        color: tileData.isPressed ? Colors.white : Colors.transparent,
+      ),
+      child: ListTile(
+        onTap: press,
+        leading: SvgPicture.asset(
+          tileData.icons,
+        ),
+        title: Text(
+          tileData.title,
+          style: TextStyle(
+            fontSize: 16.0,
+            color: tileData.isPressed ? Colors.black : Colors.lightBlue,
+          ),
+        ),
       ),
     );
   }

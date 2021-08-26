@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secure_banking/constant/color_constant.dart';
 import 'package:secure_banking/responsive.dart';
 import 'package:secure_banking/ui/widgets/drawer_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
@@ -34,32 +35,26 @@ class _HomePageState extends State<HomePage> {
     var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);
 
     return Scaffold(
-      backgroundColor: Colors.red,
       body: SafeArea(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // We want this side menu only for large screen
             if (Responsive.isDesktop(context))
               Expanded(
                 child: AnimatedContainer(
+                  color: AppColors.bgDrawer,
                   duration: _duration,
                   width: width1,
                   child: SideMenu(),
                 ),
               ),
-           /* AnimatedContainer(
+            AnimatedContainer(
               duration: _duration,
               width: Responsive.isDesktop(context)
                   ? width2
                   : pWidth,
-              color: Colors.red,
-            ),*/
-            AnimatedContainer(
-              duration: _duration,
               child: TransactionViewWidget(),
-              width: width1,
             ),
           ],
         ),
