@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:secure_banking/responsive.dart';
+import 'package:secure_banking/ui/screen/dashboard_page.dart';
 import 'package:secure_banking/ui/widgets/drawer_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);
 
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,8 +56,8 @@ class _HomePageState extends State<HomePage> {
             ),*/
             AnimatedContainer(
               duration: _duration,
-              child: TransactionViewWidget(),
-              width: width1,
+              child: DashBoardPage(),
+              //width: width1,
             ),
           ],
         ),
