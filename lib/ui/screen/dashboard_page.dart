@@ -25,87 +25,89 @@ class _DashBoardPageState extends State<DashBoardPage> {
     final pWidth = MediaQuery.of(context).size.width;
     var width1 = (_flex1 * pWidth) / (_flex1 + _flex2);
     var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);
-    return Row(
-      children: [
-        SizedBox(
-          width: 50,
-        ),
-        Expanded(
-          flex: 8,
-          child: Container(
-            width: width1,
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top:100),
-                  height: 340,
-                  width: 555,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
+    return SingleChildScrollView(
+      child: Row(
+        children: [
+          SizedBox(
+            width: 50,
+          ),
+          Expanded(
+            flex: 8,
+            child: Container(
+              width: width1,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    children: [
+                      if (!Responsive.isDesktop(context))
+                        IconButton(
+                          icon: Icon(Icons.menu),
+                          onPressed: context.read<MenuController>().controlMenu,
+                        ),
+                      Text(
+                        kOverview,
+                        style: AppFontStyle.fontStyles(
+                          color: Colors.black,
+                          fontSize: 24.0,
+                        ),
                       ),
-                      color: AppColors.lightGray),
-                  child: MyLinearChart(),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    if (!Responsive.isDesktop(context))
-                      IconButton(
-                        icon: Icon(Icons.menu),
-                        onPressed: context.read<MenuController>().controlMenu,
+                      SizedBox(
+                        width: 20,
                       ),
-                    Text(
-                      kOverview,
-                      style: AppFontStyle.fontStyles(
-                        color: Colors.black,
-                        fontSize: 24.0,
+                      SvgPicture.asset(
+                        AssetImages.ic_calendar_orange,
                       ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    SvgPicture.asset(
-                      AssetImages.ic_calendar_orange,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '16 August 2020',
-                      style: AppFontStyle.fontStyles(
-                        color: AppColors.grayText,
-                        fontSize: 13.0,
+                      SizedBox(
+                        width: 10,
                       ),
-                    ),
-                    SizedBox(width: 5,),
-                    SvgPicture.asset(
-                      AssetImages.ic_down_arrow,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                AmountCardsWidget(),
-                PremiumCardImageWidget(),
-              ],
+                      Text(
+                        '16 August 2020',
+                        style: AppFontStyle.fontStyles(
+                          color: AppColors.grayText,
+                          fontSize: 13.0,
+                        ),
+                      ),
+                      SizedBox(width: 5,),
+                      SvgPicture.asset(
+                        AssetImages.ic_down_arrow,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  AmountCardsWidget(),
+                  Container(
+                    margin: EdgeInsets.only(top:20),
+                    height: 340,
+                    width: 555,
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        ),
+                        color: AppColors.lightGray),
+                    child: MyLinearChart(),
+                  ),
+                  PremiumCardImageWidget(),
+                ],
+              ),
             ),
           ),
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Expanded(
-          flex: 3,
-          child: Container(
-            child: TransactionViewWidget(),
-            width: width1,
+          SizedBox(
+            width: 20,
           ),
-        ),
-      ],
+          Expanded(
+            flex: 3,
+            child: Container(
+              child: TransactionViewWidget(),
+              width: width1,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
