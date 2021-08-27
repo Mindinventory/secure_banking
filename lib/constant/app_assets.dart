@@ -12,8 +12,6 @@ class AssetImages {
   static const String dairyIcon = 'assets/icons/ic_dairy.svg';
   static const String groceryIcon = 'assets/icons/ic_grocery.svg';
 
-
-
   // static const String userIcon = 'assets/images/user.svg';
   // static const String cardImg = 'assets/images/card.png';
 
@@ -29,4 +27,7 @@ class AssetImages {
   ///Dashboard
   static const String ic_money_rising='assets/icons/ic_money_rising.svg';
   static const String ic_card_rising='assets/icons/ic_card_rising.svg';
+
+  static const String ic_calendar_orange='assets/icons/ic_calendar_orange.svg';
+  static const String ic_down_arrow='assets/icons/ic_down_arrow.svg';
 }

@@ -29,61 +29,65 @@ class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /*DrawerHeader(
-            child: Image.network('https://picsum.photos/250?image=9'),
-          ),*/
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 25,
-              ),
-              SvgPicture.asset(
-                AssetImages.ic_bank,
-                height: 40.0,
-                width: 40.0,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                kSecureBanking,
-                style: TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
+      elevation: 0,
+      child: Container(
+        color: AppColors.lightGray,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            /*DrawerHeader(
+              child: Image.network('https://picsum.photos/250?image=9'),
+            ),*/
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 25,
                 ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            flex: 8,
-            child: ListView.builder(
-              shrinkWrap: true,
-              primary: false,
-              itemCount: _tileList.length,
-              itemBuilder: (BuildContext context, i) {
-                return DrawerListTile(
-                  tileData: _tileList[i],
-                  press: () => _listTileClick(i, context),
-                );
-              },
+                SvgPicture.asset(
+                  AssetImages.ic_bank,
+                  height: 40.0,
+                  width: 40.0,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  kSecureBanking,
+                  style: AppFontStyle.fontStyles(
+                    color: Colors.black,
+                    fontSize: 16.0,
+                  ),
+                )
+              ],
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Image.asset(
-              AssetImages.drawerBottom,
+            SizedBox(
+              height: 20,
             ),
-          ),
-        ],
+            Expanded(
+              flex: 8,
+              child: ListView.builder(
+                shrinkWrap: true,
+                primary: false,
+                itemCount: _tileList.length,
+                itemBuilder: (BuildContext context, i) {
+                  return DrawerListTile(
+                    tileData: _tileList[i],
+                    press: () => _listTileClick(i, context),
+                  );
+                },
+              ),
+            ),
+            Container(
+              child: Image.asset(
+                AssetImages.drawerBottom,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -116,36 +120,51 @@ class DrawerListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _width = MediaQuery.of(context).size.width;
-    return Container(
-      margin:
-          EdgeInsets.only(left: _width * 0.01, right: _width * 0.01, bottom: 8),
-      padding: const EdgeInsets.symmetric(
-        vertical: 8,
-      ),
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: tileData.isPressed ? Colors.grey : Colors.white,
-            offset: Offset(0.0, 1.0), //(x,y)
-            blurRadius: 6.0,
-          ),
-        ],
-        borderRadius: BorderRadius.circular(10.0),
-        color: tileData.isPressed ? Colors.white : Colors.transparent,
-      ),
-      child: ListTile(
-        onTap: press,
-        leading: SvgPicture.asset(
-          tileData.icons,
-          height: 20,
-          width: 20,
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        margin: EdgeInsets.only(
+            left: _width * 0.01, right: _width * 0.01, bottom: 8),
+        padding: const EdgeInsets.symmetric(
+          vertical: 8,
         ),
-        title: Text(
-          tileData.title,
-          textAlign: TextAlign.start,
-          style: TextStyle(
-            fontSize: 16.0,
-            color: tileData.isPressed ? Colors.black : Colors.lightBlue,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: tileData.isPressed ? Colors.grey : AppColors.lightGray,
+              offset: Offset(0.0, 1.0), //(x,y)
+              blurRadius: 6.0,
+            ),
+          ],
+          borderRadius: BorderRadius.circular(10.0),
+          color: tileData.isPressed ? AppColors.lightGray : Colors.transparent,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 16,
+              ),
+              SvgPicture.asset(
+                tileData.icons,
+                height: 20,
+                width: 20,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                tileData.title,
+                textAlign: TextAlign.start,
+                style: AppFontStyle.fontStyles(
+                  color: tileData.isPressed
+                      ? Colors.black
+                      : AppColors.drawerTextNotSelected,
+                  fontSize: 16.0,
+                ),
+              ),
+            ],
           ),
         ),
       ),

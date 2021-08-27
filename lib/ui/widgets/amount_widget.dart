@@ -22,86 +22,113 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Row(
-          children: [
-            Expanded(
-              flex: 5,
-              child: Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SvgPicture.asset(
-                        AssetImages.ic_money_rising,
+    return Container(
+      child: Row(
+        children: [
+          Expanded(
+            flex: 5,
+            child: Card(
+              color: AppColors.lightGray,
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 10,bottom: 10,),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SvgPicture.asset(
+                      AssetImages.ic_money_rising,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      kCreditMoney,
+                      style: AppFontStyle.fontStyles(
+                        color: Color(0xFF00294F),
+                        fontSize: 20.0,
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        kCreditMoney,
-                      ),
-                      Container(
-                        child: Row(
-                          children: [
-                            Text(
-                              kCreditAmount,
-                            ),
-                            Spacer(),
-                            Text(
-                              kDate,
-                            ),
-                          ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          kCreditAmount,
+                          style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor.withOpacity(0.46),
+                            fontSize: 13.0,
+                          ),
                         ),
-                      )
-                    ],
-                  ),
+                        Spacer(),
+                        Text(
+                          kDate,
+                          style: AppFontStyle.fontStyles(
+                            color: Color(0xFF1A40C9).withOpacity(0.5),
+                            fontSize: 10.0,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
             ),
-            Expanded(
-              flex: 5,
-              child: Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SvgPicture.asset(
-                        AssetImages.ic_card_rising,
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Expanded(
+            flex: 5,
+            child: Card(
+              color: AppColors.lightGray,
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 10,bottom: 10,),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SvgPicture.asset(
+                      AssetImages.ic_card_rising,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      kCreditCard,
+                      style: AppFontStyle.fontStyles(
+                        color: Color(0xFF00294F),
+                        fontSize: 20.0,
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(kCreditCard),
-                      Row(
-                        children: [
-                          Text(
-                            kCreditAmount,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          kCreditAmount,
+                          style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor.withOpacity(0.46),
+                            fontSize: 13.0,
                           ),
-                          Spacer(),
-                          Text(
-                            kDate,
+                        ),
+                        Spacer(),
+                        Text(
+                          kDate,
+                          style: AppFontStyle.fontStyles(
+                            color: Color(0xFF1A40C9).withOpacity(0.5),
+                            fontSize: 10.0,
                           ),
-                        ],
-                      )
-                    ],
-                  ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

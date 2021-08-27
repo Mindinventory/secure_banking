@@ -11,3 +11,6 @@ const kCreditMoney = '\$50000.00';
 const kCreditCard = '\$1500.00';
 const kCreditAmount = 'Credit Amount';
 const kDate = 'August 2020';
+
+
+const kOverview = 'Overview';

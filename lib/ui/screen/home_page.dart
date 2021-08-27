@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:secure_banking/constant/constant_public.dart';
+import 'package:secure_banking/menu_controller.dart';
 import 'package:secure_banking/responsive.dart';
 import 'package:secure_banking/ui/screen/dashboard_page.dart';
 import 'package:secure_banking/ui/widgets/drawer_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late Duration _duration;
-  int _flex1 = 1, _flex2 = 5
+  int _flex1 = 1, _flex2 = 5;
 
   @override
   void initState() {
@@ -34,22 +36,22 @@ class _HomePageState extends State<HomePage> {
     var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);
 
     return Scaffold(
+      key: context.read<MenuController>().scaffoldKey,
       body: SafeArea(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // We want this side menu only for large screen
             if (Responsive.isDesktop(context))
               Expanded(
                 child: AnimatedContainer(
-                  color: AppColors.bgDrawer,
+                  color: AppColors.lightGray,
                   duration: _duration,
                   width: width1,
                   child: SideMenu(),
                 ),
               ),
-           /* AnimatedContainer(
+            /* AnimatedContainer(
               duration: _duration,
               width: Responsive.isDesktop(context)
                   ? width2
@@ -59,7 +61,7 @@ class _HomePageState extends State<HomePage> {
             AnimatedContainer(
               duration: _duration,
               child: DashBoardPage(),
-              width: width2,
+              width: Responsive.isDesktop(context) ? width2 : pWidth,
             ),
           ],
         ),
