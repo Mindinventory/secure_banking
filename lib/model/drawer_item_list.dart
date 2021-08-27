@@ -10,8 +10,6 @@ class TilesDataModel {
 
   static List<TilesDataModel> getTilesData() {
     return [
-     /* TilesDataModel(
-          title: kSecureBanking, icons: AssetImages.ic_bank, isPressed: false),*/
       TilesDataModel(
           title: kDashboard, icons: AssetImages.ic_dashboard, isPressed: false),
       TilesDataModel(
