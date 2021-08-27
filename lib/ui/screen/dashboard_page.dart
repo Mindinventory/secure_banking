@@ -50,7 +50,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
                 PremiumCardImageWidget(),
                 if (Responsive.isMobile(context)) SizedBox(height: 16.0),
-                if (Responsive.isMobile(context)) TransactionViewWidget(),
+                if (Responsive.isMobile(context)) Container(),
               ],
             ),
           ),
