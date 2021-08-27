@@ -19,3 +19,5 @@ const kMyCard = 'My Card';
 const kFeedback = 'Feedback';
 const kContact = 'Contact';
 const kHelp = 'Help';
+
+const kPremiumCardText = 'Set Bussiness Account To \nExplore Premium Feature';

@@ -27,11 +27,11 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width / 5.3,
-      margin: EdgeInsets.only(top:0,right: 15),
+      margin: EdgeInsets.only(top: 0, right: 15),
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal:15),
+            padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -62,7 +62,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top:10,bottom: 10, right: 15),
+            margin: EdgeInsets.only(top: 10, bottom: 10, right: 15),
             child: Card(
               color: AppColors.lightGray,
               shape: RoundedRectangleBorder(
@@ -171,7 +171,19 @@ class PremiumCardImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(20.0),
-      child: SvgPicture.asset(AssetImages.preimumCardImag),
+      child: Stack(
+        children: [
+          Positioned(
+              right: 40,
+              top: 70,
+              child: Text(
+            kPremiumCardText,
+            style: AppFontStyle.fontStyles(
+                color: AppColors.textColor, fontSize: 16),
+          )),
+          SvgPicture.asset(AssetImages.preimumCardImag),
+        ],
+      ),
     );
   }
 }
