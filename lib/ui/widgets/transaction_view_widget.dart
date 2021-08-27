@@ -34,7 +34,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(kFeedback,
                     style: AppFontStyle.fontStyles(
