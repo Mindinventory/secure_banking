@@ -19,6 +19,7 @@ class AppColors {
   static const Color icNotSelected = Color(0XF6d87e5);
   static const Color drawerTextSelected = Color(0XF002A50);
   static const Color drawerTextNotSelected = Color(0XF6D87E5);
+  static const Color chartLineColor = Color(0XFF1A40C9);
 
   /// Dynamic colors as per the selected theme.
   static Color get background {

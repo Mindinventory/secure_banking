@@ -12,6 +12,9 @@ class AssetImages {
   static const String dairyIcon = 'assets/icons/ic_dairy.svg';
   static const String groceryIcon = 'assets/icons/ic_grocery.svg';
 
+  static const String bellIcon = 'assets/icons/ic_bell.svg';
+  static const String calenderIcon = 'assets/icons/ic_calender.svg';
+
 
 
   // static const String userIcon = 'assets/images/user.svg';

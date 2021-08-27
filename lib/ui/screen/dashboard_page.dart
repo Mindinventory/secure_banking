@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:secure_banking/constant/color_constant.dart';
+import 'package:secure_banking/ui/widgets/chart_directory/line_chart.dart';
+import '../widgets/chart_directory/line_chart_draw2.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
 class DashBoardPage extends StatefulWidget {
@@ -24,16 +27,27 @@ class _DashBoardPageState extends State<DashBoardPage> {
             width: width1,
             child: Column(
               children: [
+                Container(
+                  margin: EdgeInsets.only(top:100),
+                  height: 340,
+                  width: 555,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(25),
+                      ),
+                      color: AppColors.lightGray),
+                  child: MyLinearChart(),
+                ),
                 PremiumCardImageWidget(),
               ],
             ),
           ),
         ),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: Container(
             child: TransactionViewWidget(),
-            width: width2,
+            width: width1,
           ),
         )
       ],

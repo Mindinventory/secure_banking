@@ -5,6 +5,7 @@ import 'package:secure_banking/ui/screen/dashboard_page.dart';
 import 'package:secure_banking/ui/widgets/drawer_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late Duration _duration;
-  int _flex1 = 1, _flex2 = 5
+  int _flex1 = 1, _flex2 = 5;
 
   @override
   void initState() {

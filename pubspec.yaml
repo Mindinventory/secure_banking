@@ -35,6 +35,8 @@ dependencies:
   flutter_bloc: ^7.2.0
   get: ^4.3.8
   get_it: ^7.2.0
+  fl_chart: ^0.36.4
+
 
 dev_dependencies:
   flutter_test:
