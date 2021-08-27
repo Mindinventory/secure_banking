@@ -52,13 +52,6 @@ class _HomePageState extends State<HomePage> {
                   child: SideMenu(),
                 ),
               ),
-            /* AnimatedContainer(
-              duration: _duration,
-              width: Responsive.isDesktop(context)
-                  ? width2
-                  : pWidth,
-              color: Colors.red,
-            ),*/
             AnimatedContainer(
               duration: _duration,
               child: DashBoardPage(),
