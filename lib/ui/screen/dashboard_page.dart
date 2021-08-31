@@ -24,40 +24,45 @@ class _DashBoardPageState extends State<DashBoardPage> {
     var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);*/
     return SingleChildScrollView(
       padding: EdgeInsets.all(16.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
         children: [
-          Expanded(
-            flex: 5,
-            child: Column(
-              children: [
-                header(context),
-                SizedBox(height: 16.0),
-                AmountCardsWidget(),
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  height: 340,
-                  width: 555,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
-                      ),
-                      color: AppColors.lightGray),
-                  child: MyLinearChart(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 6,
+                child: Column(
+                  children: [
+                    header(context),
+                    SizedBox(height: 16.0),
+                    AmountCardsWidget(),
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: 340,
+                      width: 555,
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(25),
+                          ),
+                          color: AppColors.lightGray),
+                      child: MyLinearChart(),
+                    ),
+                    PremiumCardImageWidget(),
+
+                  ],
                 ),
-                PremiumCardImageWidget(),
-                if (Responsive.isMobile(context)) SizedBox(height: 16.0),
-                if (Responsive.isMobile(context)) Container(),
-              ],
-            ),
+              ),
+              if (!Responsive.isMobile(context)) SizedBox(width: 16.0),
+              // On Mobile means if the screen is less than 850 we dont want to show it
+              if (!Responsive.isMobile(context))
+                Expanded(
+                  flex: 3,
+                  child: TransactionViewWidget(),
+                ),
+            ],
           ),
-          if (!Responsive.isMobile(context)) SizedBox(width: 16.0),
-          // On Mobile means if the screen is less than 850 we dont want to show it
-          if (!Responsive.isMobile(context))
-            Expanded(
-              flex: 2,
-              child: TransactionViewWidget(),
-            ),
+          if (Responsive.isMobile(context)) SizedBox(height: 16.0),
+          if (Responsive.isMobile(context)) TransactionViewWidget(),
         ],
       ),
     );

@@ -3,7 +3,7 @@ import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/menu_controller.dart';
 import 'package:secure_banking/responsive.dart';
 import 'package:secure_banking/ui/screen/dashboard_page.dart';
-import 'package:secure_banking/ui/widgets/drawer_widget.dart';
+import 'package:secure_banking/ui/widgets/side_menu_widget.dart';
 import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
 import 'package:provider/provider.dart';
 
