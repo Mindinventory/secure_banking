@@ -8,6 +8,7 @@ class MenuController extends ChangeNotifier {
   void controlMenu() {
     if (!_scaffoldKey.currentState!.isDrawerOpen) {
       _scaffoldKey.currentState!.openDrawer();
+      print(_scaffoldKey.currentState);
     }
   }
 }

@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       key: context.read<MenuController>().scaffoldKey,
+      drawer: SideMenu(),
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,6 +46,16 @@ class _HomePageState extends State<HomePage> {
             // We want this side menu only for large screen
             if (Responsive.isDesktop(context))
               Expanded(
+                // default flex = SideMenu1
+                // and it takes 1/6 part of the screen
+                child: SideMenu(),
+              ),
+            Expanded(
+              // It takes 5/6 part of the screen
+              flex: 5,
+              child: DashBoardPage(),
+            ),
+              /*Expanded(
                 child: AnimatedContainer(
                   color: AppColors.lightGray,
                   duration: _duration,
@@ -56,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               duration: _duration,
               child: DashBoardPage(),
               width: Responsive.isDesktop(context) ? width2 : pWidth,
-            ),
+            ),*/
           ],
         ),
       ),
