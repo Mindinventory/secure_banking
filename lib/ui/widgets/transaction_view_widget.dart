@@ -61,100 +61,102 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top:10,bottom: 10, right:0),
-            child: Card(
-              color: AppColors.lightGray,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  side: BorderSide(
-                    width: 5,
-                    color: AppColors.lightGray,
-                  )),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          kTransaction,
-                          style: AppFontStyle.fontStyles(
-                              color: AppColors.textColor),
-                        ),
-                        Image.asset(
-                          AssetImages.addImg,
-                          height: 30,
-                          width: 30,
-                        )
-                      ],
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: getTransactionListData.length,
-                    shrinkWrap: true,
-                    primary: false,
-                    itemBuilder: (context, index) {
-                      TransactionItemListModel transactionList =
-                          getTransactionListData[index];
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: 15),
-                        child: ListTile(
-                          leading: SvgPicture.asset(transactionList.icon),
-                          title: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                transactionList.itemName,
-                                style: AppFontStyle.fontStyles(
-                                    color: AppColors.textColor, fontSize: 16),
-                              ),
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Text(transactionList.timing,
-                                  style: AppFontStyle.fontStyles(
-                                      color: AppColors.textColor,
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w400))
-                            ],
-                          ),
-                          trailing: Text(
-                              "- " +
-                                  String.fromCharCodes(Runes('\u0024')) +
-                                  transactionList.price,
-                              style: AppFontStyle.fontStyles(
-                                  color: AppColors.textColor, fontSize: 14)),
-                        ),
-                      );
-                    },
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        top: 18, left: 18, bottom: 10, right: 18),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(kMyCard,
+          SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.only(top:10,bottom: 10, right:0),
+              child: Card(
+                color: AppColors.lightGray,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    side: BorderSide(
+                      width: 5,
+                      color: AppColors.lightGray,
+                    )),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            kTransaction,
                             style: AppFontStyle.fontStyles(
-                                color: AppColors.textColor)),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.more_horiz,
-                            size: 20,
+                                color: AppColors.textColor),
                           ),
-                        ),
-                      ],
+                          Image.asset(
+                            AssetImages.addImg,
+                            height: 30,
+                            width: 30,
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  SvgPicture.asset(
-                    AssetImages.cardImg,
-                  )
-                ],
+                    ListView.builder(
+                      itemCount: getTransactionListData.length,
+                      shrinkWrap: true,
+                      primary: false,
+                      itemBuilder: (context, index) {
+                        TransactionItemListModel transactionList =
+                            getTransactionListData[index];
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 15),
+                          child: ListTile(
+                            leading: SvgPicture.asset(transactionList.icon),
+                            title: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  transactionList.itemName,
+                                  style: AppFontStyle.fontStyles(
+                                      color: AppColors.textColor, fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Text(transactionList.timing,
+                                    style: AppFontStyle.fontStyles(
+                                        color: AppColors.textColor,
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400))
+                              ],
+                            ),
+                            trailing: Text(
+                                "- " +
+                                    String.fromCharCodes(Runes('\u0024')) +
+                                    transactionList.price,
+                                style: AppFontStyle.fontStyles(
+                                    color: AppColors.textColor, fontSize: 12)),
+                          ),
+                        );
+                      },
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: 18, left: 18, bottom: 10, right: 18),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(kMyCard,
+                              style: AppFontStyle.fontStyles(
+                                  color: AppColors.textColor)),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.more_horiz,
+                              size: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      AssetImages.cardImg,
+                    )
+                  ],
+                ),
               ),
             ),
           ),

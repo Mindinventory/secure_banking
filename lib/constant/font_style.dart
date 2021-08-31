@@ -15,7 +15,7 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle fontStyles({Color color = Colors.black,double fontSize = 22.0,FontWeight fontWeight = FontWeight.w600}) {
+  static TextStyle fontStyles({Color color = Colors.black,double fontSize = 20.0,FontWeight fontWeight = FontWeight.w600}) {
     return TextStyle(
         color: color,
         fontFamily: 'Poppins',
