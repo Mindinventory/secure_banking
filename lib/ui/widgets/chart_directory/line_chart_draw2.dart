@@ -1,6 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:secure_banking/constant/color_constant.dart';
+import '../../../constant/color_constant.dart';
 
 class LineChartDraw2 extends StatefulWidget {
   @override

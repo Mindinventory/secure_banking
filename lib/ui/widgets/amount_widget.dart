@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:secure_banking/constant/constant_public.dart';
+import '../../constant/constant_public.dart';
 
 class AmountCardsWidget extends StatefulWidget {
   const AmountCardsWidget({Key? key}) : super(key: key);
@@ -34,7 +34,12 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 10,bottom: 10,),
+                padding: const EdgeInsets.only(
+                  left: 15.0,
+                  right: 15.0,
+                  top: 10,
+                  bottom: 10,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -87,7 +92,12 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 10,bottom: 10,),
+                padding: const EdgeInsets.only(
+                  left: 15.0,
+                  right: 15.0,
+                  top: 10,
+                  bottom: 10,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

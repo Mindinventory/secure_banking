@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:secure_banking/constant/color_constant.dart';
-import 'package:secure_banking/ui/widgets/chart_directory/line_chart.dart';
-import 'package:secure_banking/ui/widgets/header.dart';
-import '../widgets/chart_directory/line_chart_draw2.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:secure_banking/constant/constant_public.dart';
-import 'package:secure_banking/menu_controller.dart';
-import 'package:secure_banking/responsive.dart';
-import 'package:secure_banking/ui/widgets/amount_widget.dart';
-import 'package:secure_banking/ui/widgets/transaction_view_widget.dart';
+import '../../constant/color_constant.dart';
+import '../widgets/chart_directory/line_chart.dart';
+import '../widgets/header.dart';
+import '../../constant/constant_public.dart';
+import '../../responsive.dart';
+import '../widgets/amount_widget.dart';
+import '../widgets/transaction_view_widget.dart';
 
 class DashBoardPage extends StatefulWidget {
   const DashBoardPage({Key? key}) : super(key: key);

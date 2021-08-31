@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:secure_banking/constant/constant_public.dart';
-import 'package:secure_banking/model/transaction_item_list_model.dart';
+import '../../constant/constant_public.dart';
+import '../../model/transaction_item_list_model.dart';
 
 class TransactionViewWidget extends StatefulWidget {
   const TransactionViewWidget({Key? key}) : super(key: key);

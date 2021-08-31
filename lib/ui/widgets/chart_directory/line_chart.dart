@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:secure_banking/constant/color_constant.dart';
-import 'package:secure_banking/constant/constant_public.dart';
+import '../../../constant/color_constant.dart';
+import '../../../constant/constant_public.dart';
 import 'line_chart_draw1.dart';
 import 'line_chart_draw2.dart';
 
