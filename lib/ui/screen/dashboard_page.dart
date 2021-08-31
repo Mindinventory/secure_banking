@@ -19,9 +19,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
 
   @override
   Widget build(BuildContext context) {
-    final pWidth = MediaQuery.of(context).size.width;
+    /*final pWidth = MediaQuery.of(context).size.width;
     var width1 = (_flex1 * pWidth) / (_flex1 + _flex2);
-    var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);
+    var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);*/
     return SingleChildScrollView(
       padding: EdgeInsets.all(16.0),
       child: Row(

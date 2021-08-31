@@ -27,11 +27,11 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width / 5.3,
-      margin: EdgeInsets.only(top: 0, right: 15),
+      margin: EdgeInsets.only(right: 30),
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal:15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +62,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 10, bottom: 10, right: 15),
+            margin: EdgeInsets.only(top:10,bottom: 10, right:0),
             child: Card(
               color: AppColors.lightGray,
               shape: RoundedRectangleBorder(

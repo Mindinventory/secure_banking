@@ -17,11 +17,11 @@ Widget header(BuildContext context){
         kOverview,
         style: AppFontStyle.fontStyles(
           color: Colors.black,
-          fontSize: 24.0,
+          fontSize: 20.0,
         ),
       ),
       SizedBox(
-        width: 20,
+        width: 15,
       ),
       SvgPicture.asset(
         AssetImages.ic_calendar_orange,

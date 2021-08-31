@@ -33,44 +33,44 @@ class _SideMenuState extends State<SideMenu> {
       child: Container(
         color: AppColors.lightGray,
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /*DrawerHeader(
-              child: Image.network('https://picsum.photos/250?image=9'),
-            ),*/
             SizedBox(
               height: 20,
             ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 25,
-                ),
-                SvgPicture.asset(
-                  AssetImages.ic_bank,
-                  height: 40.0,
-                  width: 40.0,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  kSecureBanking,
-                  style: AppFontStyle.fontStyles(
-                    color: Colors.black,
-                    fontSize: 16.0,
+            FittedBox(
+              alignment: Alignment.center,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 25,
                   ),
-                )
-              ],
+                  SvgPicture.asset(
+                    AssetImages.ic_bank,
+                    height: 40.0,
+                    width: 40.0,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    kSecureBanking,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppFontStyle.fontStyles(
+                      color: Colors.black,
+                      fontSize: 16.0,
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 20,
             ),
             Expanded(
-              flex: 8,
               child: ListView.builder(
-                shrinkWrap: true,
-                primary: false,
                 itemCount: _tileList.length,
                 itemBuilder: (BuildContext context, i) {
                   return DrawerListTile(
@@ -81,9 +81,13 @@ class _SideMenuState extends State<SideMenu> {
               ),
             ),
             Container(
-              child: Image.asset(
-                AssetImages.drawerBottom,
-                fit: BoxFit.cover,
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 5.0),
+                child: Image.asset(
+                  AssetImages.drawerBottom,
+                  // fit: BoxFit.cover,
+                ),
               ),
             ),
           ],
