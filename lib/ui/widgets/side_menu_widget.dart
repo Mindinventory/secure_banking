@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/model/drawer_item_list.dart';
 
+import '../../responsive.dart';
+
 class SideMenu extends StatefulWidget {
   const SideMenu({
     Key? key,
@@ -17,7 +19,6 @@ class _SideMenuState extends State<SideMenu> {
 
   @override
   void initState() {
-    _tileList.addAll(TilesDataModel.getTilesData());
     super.initState();
   }
 
@@ -28,6 +29,17 @@ class _SideMenuState extends State<SideMenu> {
 
   @override
   Widget build(BuildContext context) {
+    if (Responsive.isMobile(context) && _tileList.length <= 4) {
+      _tileList.clear();
+      _tileList.addAll(TilesDataModel.getTilesData());
+      _tileList.addAll(TilesDataModel.getTilesOtherData());
+
+    } else if (!Responsive.isMobile(context) &&
+        (_tileList.length >= 4 || _tileList.isEmpty)) {
+      _tileList.clear();
+      _tileList.addAll(TilesDataModel.getTilesData());
+    }
+
     return Drawer(
       elevation: 0,
       child: Container(

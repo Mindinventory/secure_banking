@@ -35,4 +35,9 @@ class AssetImages {
 
   static const String ic_calendar_orange='assets/icons/ic_calendar_orange.svg';
   static const String ic_down_arrow='assets/icons/ic_down_arrow.svg';
+
+
+  ///Premium card image
+  static const String laptopImgBg='assets/images/laptop_img.svg';
+  static const String premiumImgBg='assets/images/premium_img_bg.svg';
 }

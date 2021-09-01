@@ -15,6 +15,9 @@ class TransactionViewWidget extends StatefulWidget {
 class _TransactionViewWidgetState extends State<TransactionViewWidget> {
   List<TransactionItemListModel> getTransactionListData = [];
 
+  String imgUrl =
+      "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80";
+
   @override
   void initState() {
     getTransactionListData
@@ -32,35 +35,37 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
           : MediaQuery.of(context).size.width ,*/
       child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(kFeedback,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                Text(kContact,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                Text(kHelp,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                SvgPicture.asset(AssetImages.bellIcon, height: 21, width: 21),
-                CircleAvatar(
-                  radius: 15,
-                  child: ClipOval(
-                    child: CachedNetworkImage(
-                      imageUrl:
-                          "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80",
-                      fit: BoxFit.cover,
-                      width: 42,
-                      height: 48,
+          Visibility(
+            visible: !(Responsive.isMobile(context)),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(kFeedback,
+                      style: AppFontStyle.fontStyles(
+                          color: AppColors.textColor, fontSize: 13)),
+                  Text(kContact,
+                      style: AppFontStyle.fontStyles(
+                          color: AppColors.textColor, fontSize: 13)),
+                  Text(kHelp,
+                      style: AppFontStyle.fontStyles(
+                          color: AppColors.textColor, fontSize: 13)),
+                  SvgPicture.asset(AssetImages.bellIcon, height: 21, width: 21),
+                  CircleAvatar(
+                    radius: 15,
+                    child: ClipOval(
+                      child: CachedNetworkImage(
+                        imageUrl: imgUrl,
+                        fit: BoxFit.cover,
+                        width: 42,
+                        height: 48,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Container(
@@ -135,8 +140,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     },
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
-                        top: 18, left: 18, right: 18),
+                    padding: EdgeInsets.only(top: 18, left: 18, right: 18),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -154,7 +158,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0,top: 15),
+                    padding: const EdgeInsets.only(left: 20.0, top: 15),
                     child: SvgPicture.asset(
                       AssetImages.cardImg,
                     ),
@@ -174,21 +178,51 @@ class PremiumCardImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(20.0),
-      child: Stack(
-        children: [
-          Positioned(
-              right: 40,
-              top: 70,
-              child: Text(
-                kPremiumCardText,
-                style: AppFontStyle.fontStyles(
-                    color: AppColors.textColor, fontSize: 16),
-              ),),
-          SvgPicture.asset(AssetImages.preimumCardImag),
-        ],
-      ),
+    return Stack(
+      children: [
+        Positioned(
+          right: rightAlignmentValue(context),
+          top: 120,
+          child: Text(
+            kPremiumCardText,
+            style: AppFontStyle.fontStyles(
+                color: AppColors.textColor, fontSize: fontSize(context)),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 15),
+          height: 340,
+          width: 1200,
+          child: SvgPicture.asset(
+            AssetImages.preimumCardImag,
+            fit: BoxFit.fill,
+          ),
+        )
+      ],
     );
+  }
+
+  double rightAlignmentValue(BuildContext context) {
+    if (Responsive.isTab(context)) {
+      return 120;
+    } else if (Responsive.isTablePro(context)) {
+      return 100;
+    } else if (Responsive.isMobile(context)) {
+      return 30;
+    } else {
+      return 200;
+    }
+  }
+
+  double fontSize(BuildContext context) {
+    if (Responsive.isTab(context)) {
+      return 12;
+    } else if (Responsive.isTablePro(context)) {
+      return 13;
+    } else if (Responsive.isMobile(context)) {
+      return 9;
+    } else {
+      return 16;
+    }
   }
 }

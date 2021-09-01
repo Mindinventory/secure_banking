@@ -36,6 +36,10 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                     elevation: 5,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
+                        side: BorderSide(
+                          width: 5,
+                          color: AppColors.lightGray,
+                        )
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(

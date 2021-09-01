@@ -17,6 +17,8 @@ class DashBoardPage extends StatefulWidget {
 class _DashBoardPageState extends State<DashBoardPage> {
   int _flex1 = 1, _flex2 = 5;
 
+
+
   @override
   Widget build(BuildContext context) {
     /*final pWidth = MediaQuery.of(context).size.width;
@@ -39,16 +41,19 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     Container(
                       margin: EdgeInsets.only(top: 20),
                       height: 340,
-                      width: 555,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
-                          ),
-                          color: AppColors.lightGray),
-                      child: MyLinearChart(),
+                      width: 1200,
+                      child: Card(
+                        color: AppColors.lightGray,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            side: BorderSide(
+                              width: 5,
+                              color: AppColors.lightGray,
+                            )),
+                        child: MyLinearChart(),
+                      ),
                     ),
                     PremiumCardImageWidget(),
-
                   ],
                 ),
               ),
