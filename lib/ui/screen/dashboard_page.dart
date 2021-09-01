@@ -26,10 +26,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
-          if (!Responsive.isMobile(context))
-            header(context)
-          else if (Responsive.isMobile(context))
-            headerMobile(context),
+          if (!Responsive.isMobile(context)) header(context),
+          if (Responsive.isMobile(context)) headerMobile(context),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
