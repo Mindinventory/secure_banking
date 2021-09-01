@@ -26,6 +26,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
+          if (!Responsive.isMobile(context))
+            header(context)
+          else if (Responsive.isMobile(context))
+            headerMobile(context),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,7 +37,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 flex: 6,
                 child: Column(
                   children: [
-                    header(context),
                     SizedBox(height: 16.0),
                     AmountCardsWidget(),
                     Container(
@@ -48,7 +51,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
                       child: MyLinearChart(),
                     ),
                     PremiumCardImageWidget(),
-
                   ],
                 ),
               ),

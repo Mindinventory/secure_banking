@@ -26,7 +26,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
     return Container(
       child: Column(
         children: [
-          if (!Responsive.isMobile(context))
+          if (!Responsive.isMobile(context) || Responsive.isTablet(context))
             Row(
               children: [
                 Expanded(
@@ -179,7 +179,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 )
               ],
             ),
-          if (Responsive.isMobile(context))
+          if (Responsive.isMobile(context) && !Responsive.isTablet(context))
             Column(
               children: [
                 Container(

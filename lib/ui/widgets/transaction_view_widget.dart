@@ -32,47 +32,17 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
           : MediaQuery.of(context).size.width ,*/
       child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(kFeedback,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                Text(kContact,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                Text(kHelp,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                SvgPicture.asset(AssetImages.bellIcon, height: 21, width: 21),
-                CircleAvatar(
-                  radius: 15,
-                  child: ClipOval(
-                    child: CachedNetworkImage(
-                      imageUrl:
-                          "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80",
-                      fit: BoxFit.cover,
-                      width: 42,
-                      height: 48,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
           Container(
             margin: EdgeInsets.only(top: 10),
             child: Card(
               color: AppColors.lightGray,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  side: BorderSide(
-                    width: 5,
-                    color: AppColors.lightGray,
-                  )),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                side: BorderSide(
+                  width: 5,
+                  color: AppColors.lightGray,
+                ),
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,8 +105,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     },
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
-                        top: 18, left: 18, right: 18),
+                    padding: EdgeInsets.only(top: 18, left: 18, right: 18),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -154,7 +123,11 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0,top: 15),
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                      // top: 15,
+                      right: 20.0,
+                    ),
                     child: SvgPicture.asset(
                       AssetImages.cardImg,
                     ),
@@ -179,13 +152,14 @@ class PremiumCardImageWidget extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-              right: 40,
-              top: 70,
-              child: Text(
-                kPremiumCardText,
-                style: AppFontStyle.fontStyles(
-                    color: AppColors.textColor, fontSize: 16),
-              ),),
+            right: 40,
+            top: 70,
+            child: Text(
+              kPremiumCardText,
+              style: AppFontStyle.fontStyles(
+                  color: AppColors.textColor, fontSize: 16),
+            ),
+          ),
           SvgPicture.asset(AssetImages.preimumCardImag),
         ],
       ),
