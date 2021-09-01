@@ -22,6 +22,10 @@ class AppColors {
   static const Color drawerTextNotSelected = Color(0xFF6D87E5);
   static const Color chartLineColor = Color(0XFF1A40C9);
 
+  static const Color cardYellowColor = Color(0XFFFDA92D);
+
+
+
   /// Dynamic colors as per the selected theme.
   static Color get background {
     return isLightMode ? Colors.red : Colors.blue;

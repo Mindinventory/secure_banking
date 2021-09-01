@@ -180,7 +180,7 @@ class PremiumCardImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
+       /* Positioned(
           right: rightAlignmentValue(context),
           top: 120,
           child: Text(
@@ -188,14 +188,45 @@ class PremiumCardImageWidget extends StatelessWidget {
             style: AppFontStyle.fontStyles(
                 color: AppColors.textColor, fontSize: fontSize(context)),
           ),
-        ),
+        ),*/
         Container(
           margin: EdgeInsets.only(top: 15),
           height: 340,
-          width: 1200,
-          child: SvgPicture.asset(
-            AssetImages.preimumCardImag,
-            fit: BoxFit.fill,
+          width:1200,
+          decoration: BoxDecoration(
+            color: AppColors.cardYellowColor.withOpacity(0.2),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(AssetImages.laptopImgBg),
+              SizedBox(width:rightAlignmentValue(context)),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    kPremiumCardText,
+                    style: AppFontStyle.fontStyles(
+                        color: AppColors.textColor, fontSize: 14),
+                  ),
+                  SizedBox(height:20,),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(kPremiumButton,style:AppFontStyle.fontStyles(fontSize:12,color:AppColors.cardYellowColor),),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12), // <-- Radius
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
         )
       ],
@@ -204,7 +235,7 @@ class PremiumCardImageWidget extends StatelessWidget {
 
   double rightAlignmentValue(BuildContext context) {
     if (Responsive.isTab(context)) {
-      return 120;
+      return 80;
     } else if (Responsive.isTablePro(context)) {
       return 100;
     } else if (Responsive.isMobile(context)) {
@@ -222,7 +253,7 @@ class PremiumCardImageWidget extends StatelessWidget {
     } else if (Responsive.isMobile(context)) {
       return 9;
     } else {
-      return 16;
+      return 14;
     }
   }
 }
