@@ -99,7 +99,7 @@ class MyLinearChart extends StatelessWidget {
                 const TextStyle(
                     color: AppColors.textColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 10),
                 getTitles: (value) {
                   switch (value.toInt()) {
                     case 1:
@@ -197,17 +197,17 @@ class MyLinearChart extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child:Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right:10),
+                        padding: const EdgeInsets.only(right:9),
                         child: SvgPicture.asset(AssetImages.calenderIcon),
                       ),
-                      Text("Earnings Summary",style:AppFontStyle.fontStyles(color:AppColors.textColor,fontSize:15),),
+                      Text("Earnings Summary",style:AppFontStyle.fontStyles(color:AppColors.textColor,fontSize:13),),
                     ],
                   ),
                   IconButton(onPressed: (){}, icon:Icon(Icons.more_horiz)),

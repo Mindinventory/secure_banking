@@ -15,6 +15,9 @@ class TransactionViewWidget extends StatefulWidget {
 class _TransactionViewWidgetState extends State<TransactionViewWidget> {
   List<TransactionItemListModel> getTransactionListData = [];
 
+  String imgUrl =
+      "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80";
+
   @override
   void initState() {
     getTransactionListData
@@ -147,22 +150,51 @@ class PremiumCardImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(20.0),
-      child: Stack(
-        children: [
-          Positioned(
-            right: 40,
-            top: 70,
-            child: Text(
-              kPremiumCardText,
-              style: AppFontStyle.fontStyles(
-                  color: AppColors.textColor, fontSize: 16),
-            ),
+    return Stack(
+      children: [
+        Positioned(
+          right: rightAlignmentValue(context),
+          top: 120,
+          child: Text(
+            kPremiumCardText,
+            style: AppFontStyle.fontStyles(
+                color: AppColors.textColor, fontSize: fontSize(context)),
           ),
-          SvgPicture.asset(AssetImages.preimumCardImag),
-        ],
-      ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 15),
+          height: 340,
+          width: 1200,
+          child: SvgPicture.asset(
+            AssetImages.preimumCardImag,
+            fit: BoxFit.fill,
+          ),
+        )
+      ],
     );
+  }
+
+  double rightAlignmentValue(BuildContext context) {
+    if (Responsive.isTab(context)) {
+      return 120;
+    } else if (Responsive.isTablePro(context)) {
+      return 100;
+    } else if (Responsive.isMobile(context)) {
+      return 30;
+    } else {
+      return 200;
+    }
+  }
+
+  double fontSize(BuildContext context) {
+    if (Responsive.isTab(context)) {
+      return 12;
+    } else if (Responsive.isTablePro(context)) {
+      return 13;
+    } else if (Responsive.isMobile(context)) {
+      return 9;
+    } else {
+      return 16;
+    }
   }
 }
