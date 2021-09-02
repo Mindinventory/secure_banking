@@ -140,7 +140,6 @@ class PremiumCardImageWidget extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(top: 15),
           height: 340,
-          //width:1200,
           decoration: BoxDecoration(
             color: AppColors.cardYellowColor.withOpacity(0.2),
             borderRadius: const BorderRadius.all(Radius.circular(20)),
@@ -148,42 +147,81 @@ class PremiumCardImageWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Flexible(
-                  flex :4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left:10.0),
-                    child: SvgPicture.asset(AssetImages.laptopImgBg),
-                  )),
-              SizedBox(width:rightAlignmentValue(context)),
-              Flexible(
-                flex :2,
-                child: Padding(
-                  padding: const EdgeInsets.only(right:10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        kPremiumCardText,
-                        style: AppFontStyle.fontStyles(
-                            color: AppColors.textColor, fontSize: 14),
-                      ),
-                      const SizedBox(height:20,),
-                      FittedBox(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Text(kPremiumButton,style:AppFontStyle.fontStyles(fontSize:13,color:AppColors.cardYellowColor),),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12), // <-- Radius
-                            ),
+              Column(
+                children: [
+                  const SizedBox(height:20,),
+                  Visibility(
+                    visible: Responsive.isMobile(context),
+                    child: Text(
+                      kPremiumCardText,
+                      style: AppFontStyle.fontStyles(
+                          color: AppColors.textColor, fontSize: 14),
+                    ),
+                  ),
+                  const SizedBox(height:10,),
+                  Flexible(
+                      flex :4,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:10.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                            child: SvgPicture.asset(AssetImages.laptopImgBg)),
+                      )),
+                  const SizedBox(height:20,),
+                  Visibility(
+                    visible: Responsive.isMobile(context),
+                    child: FittedBox(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(kPremiumButton,style:AppFontStyle.fontStyles(fontSize:13,color:AppColors.cardYellowColor),),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12), // <-- Radius
                           ),
                         ),
                       ),
-                    ],
+                    ),
+                  ),
+                  const SizedBox(height:20,),
+                ],
+              ),
+              SizedBox(width:rightAlignmentValue(context)),
+              Visibility(
+                visible: !Responsive.isMobile(context),
+                child: Flexible(
+                  flex :2,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right:10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          kPremiumCardText,
+                          style: AppFontStyle.fontStyles(
+                              color: AppColors.textColor, fontSize: 14),
+                        ),
+                        const SizedBox(height:20,),
+                        FittedBox(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Text(kPremiumButton,style:AppFontStyle.fontStyles(fontSize:13,color:AppColors.cardYellowColor),),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12), // <-- Radius
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               )
@@ -206,15 +244,4 @@ class PremiumCardImageWidget extends StatelessWidget {
     }
   }
 
-  double fontSize(BuildContext context) {
-    if (Responsive.isTab(context)) {
-      return 12;
-    } else if (Responsive.isTablePro(context)) {
-      return 13;
-    } else if (Responsive.isMobile(context)) {
-      return 9;
-    } else {
-      return 14;
-    }
-  }
 }
