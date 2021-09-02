@@ -135,7 +135,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                         Text(
                           kCreditCard,
                           style: AppFontStyle.fontStyles(
-                            color: AppColors.chartLineColor,
+                            color: AppColors.textColor,
                             fontSize: 18.0,
                           ),
                         ),

@@ -147,7 +147,7 @@ class MyLinearChart extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(right: 9),
-                        child: SvgPicture.asset(AssetImages.calenderIcon),
+                        child: FittedBox(child: SvgPicture.asset(AssetImages.calenderIcon)),
                       ),
                       Text(
                         'Earnings Summary',

@@ -47,45 +47,42 @@ class _SideMenuState extends State<SideMenu> {
       elevation: 0,
       child: Container(
         color: AppColors.lightGray,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            FittedBox(
-              alignment: Alignment.center,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    width: 25,
+        child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
+          child: Column(
+            //   mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FittedBox(
+                alignment: Alignment.center,
+                child: Container(
+                  margin: const EdgeInsets.all(20),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        AssetImages.icBank,
+                        height: 40.0,
+                        width: 40.0,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        kSecureBanking,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppFontStyle.fontStyles(
+                          color: Colors.black,
+                          fontSize: 16.0,
+                        ),
+                      )
+                    ],
                   ),
-                  SvgPicture.asset(
-                    AssetImages.icBank,
-                    height: 40.0,
-                    width: 40.0,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    kSecureBanking,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppFontStyle.fontStyles(
-                      color: Colors.black,
-                      fontSize: 16.0,
-                    ),
-                  )
-                ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Expanded(
-              child: ListView.builder(
+              ListView.builder(
+                shrinkWrap: true,
+                primary: false,
                 itemCount: _tileList.length,
                 itemBuilder: (BuildContext context, i) {
                   var data = _tileList[i];
@@ -95,18 +92,16 @@ class _SideMenuState extends State<SideMenu> {
                   );
                 },
               ),
-            ),
-            Container(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 5.0),
-                child: Image.asset(
-                  AssetImages.drawerBottom,
-                  // fit: BoxFit.cover,
-                ),
+             //const Spacer(),
+              SizedBox(
+                height: Responsive.isMobile(context) ?20.0:MediaQuery.of(context).size.height/3.25
               ),
-            ),
-          ],
+              Image.asset(
+                AssetImages.drawerBottom,
+                // fit: BoxFit.cover,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -141,7 +136,11 @@ class DrawerListTile extends StatelessWidget {
       onTap: press,
       child: Container(
         margin: EdgeInsets.only(
-            left: _width * 0.01, right: _width * 0.01, bottom: 8),
+          left: _width * 0.01,
+          right: _width * 0.01,
+          bottom: 8,
+          top: 5,
+        ),
         padding: const EdgeInsets.symmetric(
           vertical: 8,
         ),

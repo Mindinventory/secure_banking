@@ -11,7 +11,7 @@ class TilesDataModel {
   static List<TilesDataModel> getTilesData() {
     return [
       TilesDataModel(
-          title: kDashboard, icons: AssetImages.icDashboard, isPressed: false),
+          title: kDashboard, icons: AssetImages.icDashboard, isPressed: true),
       TilesDataModel(
           title: kAccounts,
           icons: AssetImages.icAccount,
