@@ -147,6 +147,8 @@ class PremiumCardImageWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 
+
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
