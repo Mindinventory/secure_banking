@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constant/constant_public.dart';
@@ -29,39 +28,6 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Visibility(
-          visible: !(Responsive.isMobile(context)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(kFeedback,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                Text(kContact,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                Text(kHelp,
-                    style: AppFontStyle.fontStyles(
-                        color: AppColors.textColor, fontSize: 13)),
-                SvgPicture.asset(AssetImages.bellIcon, height: 21, width: 21),
-                CircleAvatar(
-                  radius: 15,
-                  child: ClipOval(
-                    child: CachedNetworkImage(
-                      imageUrl: imgUrl,
-                      fit: BoxFit.cover,
-                      width: 42,
-                      height: 48,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
         Container(
           margin: const EdgeInsets.only(top: 10),
           child: Card(

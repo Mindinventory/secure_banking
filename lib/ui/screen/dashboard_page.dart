@@ -30,7 +30,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 flex: 6,
                 child: Column(
                   children: [
-                    header(context),
                     const SizedBox(height: 16.0),
                     const AmountCardsWidget(),
                     Container(
