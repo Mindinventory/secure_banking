@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constant/color_constant.dart';
 import '../../../constant/constant_public.dart';
+import '../../../responsive.dart';
 
 class MyLinearChart extends StatelessWidget {
   final double maxX;
@@ -45,32 +46,55 @@ class MyLinearChart extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 10),
                 getTitles: (value) {
-                  switch (value.toInt()) {
-                    case 1:
-                      return 'Jan';
-                    case 2:
-                      return 'Feb';
-                    case 3:
-                      return 'Mar';
-                    case 4:
-                      return 'Apr';
-                    case 5:
-                      return 'May';
-                    case 6:
-                      return 'Jun';
-                    case 7:
-                      return 'Jul';
-                    case 8:
-                      return 'Aug';
-                    case 9:
-                      return 'Sept';
-                    case 10:
-                      return 'Oct';
-                    case 11:
-                      return 'Nov';
-                    case 12:
-                      return 'Dec';
+                  if (!Responsive.isMobile(context)) {
+                    switch (value.toInt()) {
+                      case 1:
+                        return 'Jan';
+                      case 2:
+                        return 'Feb';
+                      case 3:
+                        return 'Mar';
+                      case 4:
+                        return 'Apr';
+                      case 5:
+                        return 'May';
+                      case 6:
+                        return 'Jun';
+                      case 7:
+                        return 'Jul';
+                      case 8:
+                        return 'Aug';
+                      case 9:
+                        return 'Sept';
+                      case 10:
+                        return 'Oct';
+                      case 11:
+                        return 'Nov';
+                      case 12:
+                        return 'Dec';
+                    }
+                  } else {
+                    switch (value.toInt()) {
+                      case 1:
+                        return 'Jan';
+
+                      case 3:
+                        return 'Mar';
+
+                      case 5:
+                        return 'May';
+
+                      case 7:
+                        return 'Jul';
+
+                      case 9:
+                        return 'Sept';
+
+                      case 11:
+                        return 'Nov';
+                    }
                   }
+
                   return '';
                 },
                 margin: 8,
@@ -139,18 +163,18 @@ class MyLinearChart extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 9),
+                        padding: const EdgeInsets.only(right: 6),
                         child: SvgPicture.asset(AssetImages.calenderIcon),
                       ),
                       Text(
-                        'Earnings Summary',
+                        kEarningsSummary,
                         style: AppFontStyle.fontStyles(
                             color: AppColors.textColor, fontSize: 13),
                       ),

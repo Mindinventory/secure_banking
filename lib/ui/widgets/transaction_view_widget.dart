@@ -49,8 +49,8 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     children: [
                       Text(
                         kTransaction,
-                        style: AppFontStyle.fontStyles(
-                            color: AppColors.textColor),
+                        style:
+                            AppFontStyle.fontStyles(color: AppColors.textColor),
                       ),
                       Image.asset(
                         AssetImages.addImg,
@@ -65,8 +65,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                   shrinkWrap: true,
                   primary: false,
                   itemBuilder: (context, index) {
-                    var transactionList =
-                        getTransactionListData[index];
+                    var transactionList = getTransactionListData[index];
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
@@ -149,7 +148,9 @@ class PremiumCardImageWidget extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const SizedBox(height:20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Visibility(
                     visible: Responsive.isMobile(context),
                     child: Text(
@@ -158,16 +159,20 @@ class PremiumCardImageWidget extends StatelessWidget {
                           color: AppColors.textColor, fontSize: 14),
                     ),
                   ),
-                  const SizedBox(height:10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Flexible(
-                      flex :4,
+                      flex: 4,
                       child: Padding(
-                        padding: const EdgeInsets.only(left:10.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: Align(
-                          alignment: Alignment.center,
+                            alignment: Alignment.center,
                             child: SvgPicture.asset(AssetImages.laptopImgBg)),
                       )),
-                  const SizedBox(height:20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Visibility(
                     visible: Responsive.isMobile(context),
                     child: FittedBox(
@@ -175,27 +180,34 @@ class PremiumCardImageWidget extends StatelessWidget {
                         onPressed: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
-                          child: Text(kPremiumButton,style:AppFontStyle.fontStyles(fontSize:13,color:AppColors.cardYellowColor),),
+                          child: Text(
+                            kPremiumButton,
+                            style: AppFontStyle.fontStyles(
+                                fontSize: 13, color: AppColors.cardYellowColor),
+                          ),
                         ),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12), // <-- Radius
+                            borderRadius:
+                                BorderRadius.circular(12), // <-- Radius
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(height:20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
-              SizedBox(width:rightAlignmentValue(context)),
+              SizedBox(width: rightAlignmentValue(context)),
               Visibility(
                 visible: !Responsive.isMobile(context),
                 child: Flexible(
-                  flex :2,
+                  flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.only(right:10),
+                    padding: const EdgeInsets.only(right: 10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -204,18 +216,26 @@ class PremiumCardImageWidget extends StatelessWidget {
                           style: AppFontStyle.fontStyles(
                               color: AppColors.textColor, fontSize: 14),
                         ),
-                        const SizedBox(height:20,),
+                        const SizedBox(
+                          height: 20,
+                        ),
                         FittedBox(
                           child: ElevatedButton(
                             onPressed: () {},
                             child: Padding(
                               padding: const EdgeInsets.all(20.0),
-                              child: Text(kPremiumButton,style:AppFontStyle.fontStyles(fontSize:13,color:AppColors.cardYellowColor),),
+                              child: Text(
+                                kPremiumButton,
+                                style: AppFontStyle.fontStyles(
+                                    fontSize: 13,
+                                    color: AppColors.cardYellowColor),
+                              ),
                             ),
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12), // <-- Radius
+                                borderRadius:
+                                    BorderRadius.circular(12), // <-- Radius
                               ),
                             ),
                           ),
@@ -243,5 +263,4 @@ class PremiumCardImageWidget extends StatelessWidget {
       return 200;
     }
   }
-
 }

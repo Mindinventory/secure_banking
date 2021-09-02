@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import '../constant/constant_public.dart';
 
-
 class ThemeColors {
   Color get primaryColor {
     return isLightMode ? Colors.black : const Color(0xFF262628);
   }
 
   static Color get primaryColorDark {
-    return isLightMode ?  Colors.black : const Color(0xFF1F1D2B);
+    return isLightMode ? Colors.black : const Color(0xFF1F1D2B);
   }
 
   static Color get primaryColorLight {
