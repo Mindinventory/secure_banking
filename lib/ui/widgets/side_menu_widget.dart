@@ -92,10 +92,11 @@ class _SideMenuState extends State<SideMenu> {
                   );
                 },
               ),
-             //const Spacer(),
+              //const Spacer(),
               SizedBox(
-                height: Responsive.isMobile(context) ?20.0:MediaQuery.of(context).size.height/3.25
-              ),
+                  height: Responsive.isMobile(context)
+                      ? 20.0
+                      : MediaQuery.of(context).size.height / 3.25),
               Image.asset(
                 AssetImages.drawerBottom,
                 // fit: BoxFit.cover,

@@ -34,12 +34,11 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                   color: AppColors.lightGray,
                   elevation: 5,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(15.0),
                       side: const BorderSide(
                         width: 5,
                         color: AppColors.lightGray,
-                      )
-                  ),
+                      )),
                   child: Padding(
                     padding: const EdgeInsets.only(
                       left: 15.0,
@@ -94,7 +93,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color:AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
@@ -169,7 +169,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color: AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
@@ -248,7 +249,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color: AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
@@ -324,7 +326,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color: AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
