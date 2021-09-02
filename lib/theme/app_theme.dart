@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constant/const_value.dart';
 
-
 import 'theme_colors.dart';
 
 class AppTheme {
@@ -25,14 +24,13 @@ class AppTheme {
 
   Color get hoverColor => const Color(0xff3A3A3B);
 
-  Color get focusColor =>const  Color(0xff0B2512);
+  Color get focusColor => const Color(0xff0B2512);
 
-  Color get disabledColor =>  Colors.grey;
+  Color get disabledColor => Colors.grey;
 
   Color get textSelectionColor => Colors.black;
 
   Color get cardColor => const Color(0xFF151515);
-
 
   ThemeData get lightTheme {
     return ThemeData.light().copyWith(
