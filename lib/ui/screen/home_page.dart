@@ -27,6 +27,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    if (!Responsive.isMobile(context)) {
+      context.read<MenuController>().scaffoldKey.currentState?.openEndDrawer();
+    }
     return Scaffold(
       key: context.read<MenuController>().scaffoldKey,
       drawer: const SideMenu(),
