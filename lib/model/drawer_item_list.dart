@@ -1,4 +1,4 @@
-import 'package:secure_banking/constant/constant_public.dart';
+import '../constant/constant_public.dart';
 
 class TilesDataModel {
   String title;
@@ -11,31 +11,31 @@ class TilesDataModel {
   static List<TilesDataModel> getTilesData() {
     return [
       TilesDataModel(
-          title: kDashboard, icons: AssetImages.ic_dashboard, isPressed: false),
+          title: kDashboard, icons: AssetImages.icDashboard, isPressed: false),
       TilesDataModel(
           title: kAccounts,
-          icons: AssetImages.ic_account,
+          icons: AssetImages.icAccount,
           isPressed: false),
       TilesDataModel(
           title: kTransaction,
-          icons: AssetImages.ic_shield,
+          icons: AssetImages.icShield,
           isPressed: false),
       TilesDataModel(
-          title: kSecure, icons: AssetImages.ic_settings, isPressed: false),
+          title: kSecure, icons: AssetImages.icSettings, isPressed: false),
     ];
   }
 
   static List<TilesDataModel> getTilesOtherData() {
     return [
       TilesDataModel(
-          title: kFeedback, icons: AssetImages.ic_dashboard, isPressed: false),
+          title: kFeedback, icons: AssetImages.icDashboard, isPressed: false),
       TilesDataModel(
           title: kContact,
-          icons: AssetImages.ic_account,
+          icons: AssetImages.icAccount,
           isPressed: false),
       TilesDataModel(
           title: kHelp,
-          icons: AssetImages.ic_shield,
+          icons: AssetImages.icShield,
           isPressed: false),
     ];
   }

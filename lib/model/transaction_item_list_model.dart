@@ -1,4 +1,4 @@
-import 'package:secure_banking/constant/app_assets.dart';
+import '../constant/app_assets.dart';
 
 class TransactionItemListModel {
   String icon;
@@ -17,29 +17,29 @@ class TransactionItemListModel {
     return [
       TransactionItemListModel(
           icon: AssetImages.gymIcon,
-          itemName: "Gym",
-          timing: "1:21pm",
-          price: "10.95"),
+          itemName: 'Gym',
+          timing: '1:21pm',
+          price: '10.95'),
       TransactionItemListModel(
           icon: AssetImages.shoppingIcon,
-          itemName: "Shopping",
-          timing: "1:21pm",
-          price: "120.00"),
+          itemName: 'Shopping',
+          timing: '1:21pm',
+          price: '120.00'),
       TransactionItemListModel(
           icon: AssetImages.netflixIcon,
-          itemName: "Netflix",
-          timing: "1:21pm",
-          price: "120.00"),
+          itemName: 'Netflix',
+          timing: '1:21pm',
+          price: '120.00'),
       TransactionItemListModel(
           icon: AssetImages.dairyIcon,
-          itemName: "Dairy",
-          timing: "1:21pm",
-          price: "120.00"),
+          itemName: 'Dairy',
+          timing: '1:21pm',
+          price: '120.00'),
       TransactionItemListModel(
           icon: AssetImages.groceryIcon,
-          itemName: "Grocery",
-          timing: "1:21pm",
-          price: "120.00"),
+          itemName: 'Grocery',
+          timing: '1:21pm',
+          price: '120.00'),
     ];
   }
 }

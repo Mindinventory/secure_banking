@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:secure_banking/constant/constant_public.dart';
 import 'package:provider/provider.dart';
-import 'package:secure_banking/menu_controller.dart';
-import 'package:secure_banking/responsive.dart';
+import '../../constant/constant_public.dart';
+import '../../menu_controller.dart';
+import '../../responsive.dart';
 
 Widget header(BuildContext context){
   return Row(
     children: [
       if (!Responsive.isDesktop(context))
         IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: context.read<MenuController>().controlMenu,
         ),
       Text(
@@ -20,13 +20,13 @@ Widget header(BuildContext context){
           fontSize: 20.0,
         ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 15,
       ),
       SvgPicture.asset(
-        AssetImages.ic_calendar_orange,
+        AssetImages.icCalendarOrange,
       ),
-      SizedBox(
+      const SizedBox(
         width: 10,
       ),
       Text(
@@ -36,11 +36,11 @@ Widget header(BuildContext context){
           fontSize: 13.0,
         ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 5,
       ),
       SvgPicture.asset(
-        AssetImages.ic_down_arrow,
+        AssetImages.icDownArrow,
       ),
     ],
   );

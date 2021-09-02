@@ -8,5 +8,5 @@ T? enumFromString<T>(String key, List<T?> values) =>
 
 
 enum FieldError {
-  Empty, Invalid, NotMatch, InvalidMinute, InvalidSecond
+  empty, invalid, notMatch, invalidMinute, invalidSecond
 }

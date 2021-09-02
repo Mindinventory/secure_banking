@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:secure_banking/constant/constant_public.dart';
-import 'package:secure_banking/model/drawer_item_list.dart';
+import '../../constant/constant_public.dart';
+import '../../model/drawer_item_list.dart';
 
 import '../../responsive.dart';
 
@@ -15,7 +15,7 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
-  List<TilesDataModel> _tileList = [];
+ final  List<TilesDataModel> _tileList = [];
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _SideMenuState extends State<SideMenu> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             FittedBox(
@@ -56,15 +56,15 @@ class _SideMenuState extends State<SideMenu> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 25,
                   ),
                   SvgPicture.asset(
-                    AssetImages.ic_bank,
+                    AssetImages.icBank,
                     height: 40.0,
                     width: 40.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(
@@ -78,7 +78,7 @@ class _SideMenuState extends State<SideMenu> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -117,7 +117,7 @@ class _SideMenuState extends State<SideMenu> {
       _tileList[i].isPressed = true;
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(_tileList[i].title),
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
       ));
     });
   }
@@ -125,9 +125,9 @@ class _SideMenuState extends State<SideMenu> {
 
 class DrawerListTile extends StatelessWidget {
   const DrawerListTile({
-    Key? key,
     required this.tileData,
     required this.press,
+    Key? key,
   }) : super(key: key);
 
   final TilesDataModel tileData;
@@ -148,7 +148,7 @@ class DrawerListTile extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: tileData.isPressed ? Colors.grey : AppColors.lightGray,
-              offset: Offset(0.0, 1.0), //(x,y)
+              offset: const Offset(0.0, 1.0), //(x,y)
               blurRadius: 6.0,
             ),
           ],
@@ -159,7 +159,7 @@ class DrawerListTile extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 16,
               ),
               SvgPicture.asset(
@@ -167,7 +167,7 @@ class DrawerListTile extends StatelessWidget {
                 height: 20,
                 width: 20,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(

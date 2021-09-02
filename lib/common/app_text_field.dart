@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:secure_banking/constant/font_style.dart';
-
+import '../constant/font_style.dart';
 
 class AppTextField extends StatelessWidget {
   AppTextField({
-    Key? key,
     this.placeholder = '',
     this.value = '',
     this.isDropDown = false,
@@ -15,10 +13,11 @@ class AppTextField extends StatelessWidget {
     this.maxLength,
     this.isReadOnly = false,
     this.onSaved,
+    Key? key,
   }) : super(key: key);
 
   final Function(String)? onTextChange;
-  VoidCallback? onTapDropDown;
+  final VoidCallback? onTapDropDown;
   final String placeholder;
   final String value;
   final bool isDropDown;
@@ -46,7 +45,6 @@ class AppTextField extends StatelessWidget {
     return TextFormField(
       controller: _searchController,
       keyboardType: TextInputType.multiline,
-      //textInputAction: TextInputAction.newline,
       maxLines: 1,
       autofocus: false,
       readOnly: _isReadOnly,
@@ -92,7 +90,6 @@ class AppTextField extends StatelessWidget {
             Radius.circular(2.0),
           ),
         ),
-        //prefixIcon: const Icon(Icons.search, color: Colors.black54,),
         suffixIcon: isDropDown
             ? const Icon(
                 Icons.arrow_drop_down,

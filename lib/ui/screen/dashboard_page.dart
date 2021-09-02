@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../constant/color_constant.dart';
-import '../widgets/chart_directory/line_chart.dart';
-import '../widgets/header.dart';
 import '../../constant/constant_public.dart';
 import '../../responsive.dart';
 import '../widgets/amount_widget.dart';
+import '../widgets/chart_directory/line_chart.dart';
+import '../widgets/header.dart';
 import '../widgets/transaction_view_widget.dart';
 
 class DashBoardPage extends StatefulWidget {
@@ -15,17 +15,10 @@ class DashBoardPage extends StatefulWidget {
 }
 
 class _DashBoardPageState extends State<DashBoardPage> {
-  int _flex1 = 1, _flex2 = 5;
-
-
-
-  @override
+   @override
   Widget build(BuildContext context) {
-    /*final pWidth = MediaQuery.of(context).size.width;
-    var width1 = (_flex1 * pWidth) / (_flex1 + _flex2);
-    var width2 = (_flex2 * pWidth) / (_flex1 + _flex2);*/
     return SingleChildScrollView(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
           Row(
@@ -36,15 +29,15 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 child: Column(
                   children: [
                     header(context),
-                    SizedBox(height: 16.0),
-                    AmountCardsWidget(),
+                    const SizedBox(height: 16.0),
+                    const AmountCardsWidget(),
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(top: 20),
                       height: 340,
                       width: 1200,
                       child: Card(
                         color: AppColors.lightGray,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             side: BorderSide(
                               width: 5,
@@ -53,21 +46,21 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         child: MyLinearChart(),
                       ),
                     ),
-                    PremiumCardImageWidget(),
+                    const PremiumCardImageWidget(),
                   ],
                 ),
               ),
-              if (!Responsive.isMobile(context)) SizedBox(width: 16.0),
+              if (!Responsive.isMobile(context)) const SizedBox(width: 16.0),
               // On Mobile means if the screen is less than 850 we dont want to show it
               if (!Responsive.isMobile(context))
-                Expanded(
+                const Expanded(
                   flex: 3,
                   child: TransactionViewWidget(),
                 ),
             ],
           ),
-          if (Responsive.isMobile(context)) SizedBox(height: 16.0),
-          if (Responsive.isMobile(context)) TransactionViewWidget(),
+          if (Responsive.isMobile(context)) const SizedBox(height: 16.0),
+          if (Responsive.isMobile(context)) const TransactionViewWidget(),
         ],
       ),
     );

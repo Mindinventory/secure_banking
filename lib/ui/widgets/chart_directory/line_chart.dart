@@ -3,62 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constant/color_constant.dart';
 import '../../../constant/constant_public.dart';
-import 'line_chart_draw1.dart';
-import 'line_chart_draw2.dart';
-
-
-class LineChartPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xff262545),
-      child: ListView(
-        children: <Widget>[
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.only(
-                left: 36.0,
-                top: 24,
-              ),
-              child: Text(
-                'Line Chart',
-                style: TextStyle(
-                    color: Color(
-                      0xff6f6f97,
-                    ),
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 28,
-              right: 28,
-            ),
-            child: LineChartDraw1(),
-          ),
-          const SizedBox(
-            height: 22,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 28.0, right: 28),
-            child: LineChartDraw2(),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-
 
 class MyLinearChart extends StatelessWidget {
-  /*final ChangeThemeState themeState;*/
   final double maxX;
   final double maxY;
 
@@ -67,13 +13,12 @@ class MyLinearChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       alignment: Alignment.center,
       child: Stack(
         children: [
-          LineChart(
-              LineChartData(
-            backgroundColor:AppColors.white,
+          LineChart(LineChartData(
+            backgroundColor: AppColors.white,
             gridData: FlGridData(
               show: true,
               drawVerticalLine: false,
@@ -95,8 +40,7 @@ class MyLinearChart extends StatelessWidget {
               bottomTitles: SideTitles(
                 showTitles: true,
                 reservedSize: 22,
-                getTextStyles: (context,value) =>
-                const TextStyle(
+                getTextStyles: (context, value) => const TextStyle(
                     color: AppColors.textColor,
                     fontWeight: FontWeight.w500,
                     fontSize: 10),
@@ -105,7 +49,7 @@ class MyLinearChart extends StatelessWidget {
                     case 1:
                       return 'Jan';
                     case 2:
-                      return "Feb";
+                      return 'Feb';
                     case 3:
                       return 'Mar';
                     case 4:
@@ -113,7 +57,7 @@ class MyLinearChart extends StatelessWidget {
                     case 5:
                       return 'May';
                     case 6:
-                      return "Jun";
+                      return 'Jun';
                     case 7:
                       return 'Jul';
                     case 8:
@@ -121,7 +65,7 @@ class MyLinearChart extends StatelessWidget {
                     case 9:
                       return 'Sept';
                     case 10:
-                      return "Oct";
+                      return 'Oct';
                     case 11:
                       return 'Nov';
                     case 12:
@@ -133,8 +77,7 @@ class MyLinearChart extends StatelessWidget {
               ),
               leftTitles: SideTitles(
                 showTitles: false,
-                getTextStyles: (context,value) =>
-                 TextStyle(
+                getTextStyles: (context, value) => const TextStyle(
                   color: Color(0xff67727d),
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
@@ -167,7 +110,7 @@ class MyLinearChart extends StatelessWidget {
             maxY: 18,
             lineBarsData: [
               LineChartBarData(
-                spots:  [
+                spots: [
                   FlSpot(1, 2.8),
                   FlSpot(2, 3.2),
                   FlSpot(3, 5),
@@ -186,17 +129,16 @@ class MyLinearChart extends StatelessWidget {
                   show: true,
                 ),
                 belowBarData: BarAreaData(
-                  show: true,
-                  gradientFrom: Offset(0, 0),
-                  gradientTo: Offset(0, 1),
-                  colors: [AppColors.lightGray]
-                ),
+                    show: true,
+                    gradientFrom: const Offset(0, 0),
+                    gradientTo: const Offset(0, 1),
+                    colors: [AppColors.lightGray]),
               ),
             ],
           )),
           Align(
             alignment: Alignment.topLeft,
-            child:Padding(
+            child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -204,13 +146,18 @@ class MyLinearChart extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right:9),
+                        padding: const EdgeInsets.only(right: 9),
                         child: SvgPicture.asset(AssetImages.calenderIcon),
                       ),
-                      Text("Earnings Summary",style:AppFontStyle.fontStyles(color:AppColors.textColor,fontSize:13),),
+                      Text(
+                        'Earnings Summary',
+                        style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor, fontSize: 13),
+                      ),
                     ],
                   ),
-                  IconButton(onPressed: (){}, icon:Icon(Icons.more_horiz)),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.more_horiz)),
                 ],
               ),
             ),
@@ -218,19 +165,5 @@ class MyLinearChart extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-double _getMaxY(List<FlSpot> flSpot) {
-  if (flSpot != null) {
-    double max = 0;
-    for (int i = 0; i < flSpot.length; i++) {
-      if (max < flSpot[i].y) {
-        max = flSpot[i].y;
-      }
-    }
-    return (max * 2) ;
-  } else {
-    return 0.0;
   }
 }
