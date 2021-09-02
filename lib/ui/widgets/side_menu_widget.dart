@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:secure_banking/constant/constant_public.dart';
 import 'package:secure_banking/model/drawer_item_list.dart';
-
+import 'package:secure_banking/menu_controller.dart';
+import 'package:provider/provider.dart';
 import '../../responsive.dart';
 
 class SideMenu extends StatefulWidget {
@@ -16,10 +17,14 @@ class SideMenu extends StatefulWidget {
 
 class _SideMenuState extends State<SideMenu> {
   List<TilesDataModel> _tileList = [];
+  List<TilesDataModel> _menu1 = [];
+  List<TilesDataModel> _menu2 = [];
 
   @override
   void initState() {
     super.initState();
+    _menu1 = TilesDataModel.getTilesData();
+    _menu2 = TilesDataModel.getTilesOtherData();
   }
 
   @override
@@ -31,13 +36,12 @@ class _SideMenuState extends State<SideMenu> {
   Widget build(BuildContext context) {
     if (Responsive.isMobile(context) && _tileList.length <= 4) {
       _tileList.clear();
-      _tileList.addAll(TilesDataModel.getTilesData());
-      _tileList.addAll(TilesDataModel.getTilesOtherData());
-
+      _tileList.addAll(_menu1);
+      _tileList.addAll(_menu2);
     } else if (!Responsive.isMobile(context) &&
         (_tileList.length >= 4 || _tileList.isEmpty)) {
       _tileList.clear();
-      _tileList.addAll(TilesDataModel.getTilesData());
+      _tileList.addAll(_menu1);
     }
 
     return Drawer(
@@ -85,9 +89,10 @@ class _SideMenuState extends State<SideMenu> {
               child: ListView.builder(
                 itemCount: _tileList.length,
                 itemBuilder: (BuildContext context, i) {
+                  TilesDataModel data = _tileList[i];
                   return DrawerListTile(
-                    tileData: _tileList[i],
-                    press: () => _listTileClick(i, context),
+                    tileData: data,
+                    press: () => _listTileClick(data, context),
                   );
                 },
               ),
@@ -108,18 +113,15 @@ class _SideMenuState extends State<SideMenu> {
     );
   }
 
-  void _listTileClick(int i, BuildContext context) {
-    setState(() {
-      var index = _tileList.indexWhere((element) => element.isPressed == true);
-      if (index >= 0) {
-        _tileList[index].isPressed = false;
+  void _listTileClick(TilesDataModel model, BuildContext context) {
+    _tileList.forEach((element) {
+      if (element == model) {
+        element.isPressed = true;
+      } else {
+        element.isPressed = false;
       }
-      _tileList[i].isPressed = true;
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(_tileList[i].title),
-        duration: Duration(milliseconds: 300),
-      ));
     });
+    setState(() {});
   }
 }
 
