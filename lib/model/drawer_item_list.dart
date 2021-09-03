@@ -15,9 +15,11 @@ class TilesDataModel {
       TilesDataModel(
           title: kAccounts, icons: AssetImages.icAccount, isPressed: false),
       TilesDataModel(
-          title: kTransaction, icons: AssetImages.icShield, isPressed: false),
+          title: kTransaction, icons: AssetImages.icTransaction, isPressed: false),
       TilesDataModel(
-          title: kSecure, icons: AssetImages.icSettings, isPressed: false),
+          title: kSecure, icons: AssetImages.icShield, isPressed: false),
+      TilesDataModel(
+          title: kSettings, icons: AssetImages.icSettings, isPressed: false),
     ];
   }
 
