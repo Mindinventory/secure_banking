@@ -4,8 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constant/color_constant.dart';
 import '../../../constant/constant_public.dart';
 import '../../../responsive.dart';
+//import 'package:charts_flutter/flutter.dart';
 
 class MyLinearChart extends StatelessWidget {
+
   final double maxX;
   final double maxY;
 
@@ -18,15 +20,16 @@ class MyLinearChart extends StatelessWidget {
       alignment: Alignment.center,
       child: Stack(
         children: [
-          Card(
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                side: BorderSide(
-                  width: 5,
-                  color: AppColors.white,
-                )),
+          Container(
+
+            padding: const EdgeInsets.only(left: 10,top: 10),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
             child: Padding(
-              padding: const EdgeInsets.only(right:20),
+              padding: EdgeInsets.only(right:Responsive.isMobile(context)?20:80),
               child: LineChart(
                   LineChartData(
                 backgroundColor: AppColors.white,
@@ -201,3 +204,6 @@ class MyLinearChart extends StatelessWidget {
     );
   }
 }
+
+
+

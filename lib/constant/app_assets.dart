@@ -31,5 +31,5 @@ class AssetImages {
 
   ///Premium card image
   static const String laptopImgBg = 'assets/images/laptop_img.svg';
-  static const String premiumImgBg = 'assets/images/premium_img_bg.svg';
+  static const String premiumImgBg = 'assets/images/yellow_bg.png';
 }

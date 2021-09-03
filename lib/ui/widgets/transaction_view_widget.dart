@@ -31,6 +31,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
         Container(
           margin: const EdgeInsets.only(top: 10),
           child: Card(
+            elevation: 0.0,
             color: AppColors.lightGray,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -172,7 +173,8 @@ class PremiumCardImageWidget extends StatelessWidget {
                         child: Align(
                             alignment: Alignment.center,
                             child: SvgPicture.asset(AssetImages.laptopImgBg)),
-                      )),
+                      )
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
