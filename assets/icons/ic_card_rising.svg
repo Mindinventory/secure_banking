@@ -1,13 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="179.81" height="99.747" viewBox="0 0 179.81 99.747">
-  <g id="Group_90" data-name="Group 90" transform="translate(-802 -243.253)">
-    <path id="Path_70" data-name="Path 70" d="M1232.8,761.934s28.237,18.6,43.507-7.91,28.522,2.017,45.521,0,11.812-35.437,40.047-28.522" transform="matrix(0.995, 0.105, -0.105, 0.995, -298.175, -605.081)" fill="none" stroke="#feaa2d" stroke-linecap="round" stroke-width="2"/>
-    <rect id="Rectangle_38" data-name="Rectangle 38" width="33" height="21" rx="10.5" transform="translate(832 292)" fill="#feaa2d" opacity="0.4"/>
-    <rect id="Rectangle_39" data-name="Rectangle 39" width="39" height="39" rx="12" transform="translate(829 268)" fill="#feaa2d"/>
-    <g id="credit-card" transform="translate(837 221.644)">
-      <path id="Path_78" data-name="Path 78" d="M0,141.356H18.647v1.326H0Z" transform="translate(0 -80.288)" fill="#fff"/>
-      <path id="Path_79" data-name="Path 79" d="M18.647,59.344a1.991,1.991,0,0,0-1.988-1.988H1.988A1.991,1.991,0,0,0,0,59.344v.4H18.647Z" fill="#fff"/>
-      <path id="Path_80" data-name="Path 80" d="M18.6,203.181h.044v-1.825H0v5.435a1.991,1.991,0,0,0,1.988,1.988H13.262c0-.084-.006-.168-.006-.252A5.353,5.353,0,0,1,18.6,203.181Zm-15.288-.5H4.971a.663.663,0,1,1,0,1.326H3.314a.663.663,0,1,1,0-1.326Zm3.756,3.446H3.314a.663.663,0,1,1,0-1.326H7.07a.663.663,0,0,1,0,1.326Z" transform="translate(0 -137.638)" fill="#fff"/>
-      <path id="Path_81" data-name="Path 81" d="M334.021,272.643a4.021,4.021,0,1,0,4.021,4.021A4.026,4.026,0,0,0,334.021,272.643Zm1.927,3.68-1.591,1.591a.663.663,0,0,1-.937,0l-.817-.817a.663.663,0,0,1,.937-.937l.349.349,1.122-1.122a.663.663,0,1,1,.937.937Z" transform="translate(-315.418 -205.774)" fill="#fff"/>
+    <g id="Group_90" data-name="Group 90" transform="translate(-828 -230.253)">
+        <path id="Path_70" data-name="Path 70"
+            d="M1232.8,761.934s28.237,18.6,43.507-7.91,28.522,2.017,45.521,0,11.812-35.437,40.047-28.522"
+            transform="matrix(0.995, 0.105, -0.105, 0.995, -298.175, -605.081)" fill="none"
+            stroke="#feaa2d" stroke-linecap="round" stroke-width="2" />
+        <rect id="Rectangle_38" data-name="Rectangle 38" width="33" height="21" rx="10.5"
+            transform="translate(832 292)" fill="#feaa2d" opacity="0.4" />
+        <rect id="Rectangle_39" data-name="Rectangle 39" width="39" height="39" rx="12"
+            transform="translate(829 268)" fill="#feaa2d" />
+        <g id="credit-card" transform="translate(837 221.644)">
+            <path id="Path_78" data-name="Path 78" d="M0,141.356H18.647v1.326H0Z"
+                transform="translate(0 -80.288)" fill="#fff" />
+            <path id="Path_79" data-name="Path 79"
+                d="M18.647,59.344a1.991,1.991,0,0,0-1.988-1.988H1.988A1.991,1.991,0,0,0,0,59.344v.4H18.647Z"
+                fill="#fff" />
+            <path id="Path_80" data-name="Path 80"
+                d="M18.6,203.181h.044v-1.825H0v5.435a1.991,1.991,0,0,0,1.988,1.988H13.262c0-.084-.006-.168-.006-.252A5.353,5.353,0,0,1,18.6,203.181Zm-15.288-.5H4.971a.663.663,0,1,1,0,1.326H3.314a.663.663,0,1,1,0-1.326Zm3.756,3.446H3.314a.663.663,0,1,1,0-1.326H7.07a.663.663,0,0,1,0,1.326Z"
+                transform="translate(0 -137.638)" fill="#fff" />
+            <path id="Path_81" data-name="Path 81"
+                d="M334.021,272.643a4.021,4.021,0,1,0,4.021,4.021A4.026,4.026,0,0,0,334.021,272.643Zm1.927,3.68-1.591,1.591a.663.663,0,0,1-.937,0l-.817-.817a.663.663,0,0,1,.937-.937l.349.349,1.122-1.122a.663.663,0,1,1,.937.937Z"
+                transform="translate(-315.418 -205.774)" fill="#fff" />
+        </g>
     </g>
-  </g>
 </svg>

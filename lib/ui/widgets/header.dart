@@ -6,7 +6,7 @@ import '../../constant/constant_public.dart';
 import '../../menu_controller.dart';
 import '../../responsive.dart';
 
-Widget header(BuildContext context){
+Widget header(BuildContext context) {
   return Row(
     children: [
       if (!Responsive.isDesktop(context))
@@ -26,38 +26,43 @@ Widget header(BuildContext context){
               ),
             ),
             const SizedBox(
-        width: 15,
-      ),
-      SvgPicture.asset(
-        AssetImages.icCalendarOrange,
+              width: 15,
+            ),
+            SvgPicture.asset(
+              AssetImages.icCalendarOrange,
             ),
             const SizedBox(
-        width: 10,
-      ),
-      Text(
-        '16 August 2020',
-        style: AppFontStyle.fontStyles(
-          color: AppColors.grayText,
-          fontSize: 13.0,
-        ),
-      ),
-      const SizedBox(
-        width: 5,
-      ),
-      SvgPicture.asset(
-        AssetImages.icDownArrow,
+              width: 10,
+            ),
+            Text(
+              '16 August 2020',
+              style: AppFontStyle.fontStyles(
+                color: AppColors.grayText,
+                fontSize: 13.0,
+                fontWeight: FontWeight.w200,
+              ),
+            ),
+            const SizedBox(
+              width: 5,
+            ),
+            SvgPicture.asset(
+              AssetImages.icDownArrow,
             ),
           ],
         ),
       ),
       // Spacer(),
       const Expanded(
-          flex: 2,
-          child: SizedBox()),
+        flex: 2,
+        child: SizedBox(),
+      ),
       Expanded(
         flex: 3,
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0,right: 15.0,),
+          padding: const EdgeInsets.only(
+            left: 20.0,
+            right: 15.0,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +82,7 @@ Widget header(BuildContext context){
                 child: ClipOval(
                   child: CachedNetworkImage(
                     imageUrl:
-                    'https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80',
+                        'https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80',
                     fit: BoxFit.cover,
                     width: 42,
                     height: 48,
@@ -103,7 +108,9 @@ Widget headerMobile(BuildContext context) {
         ),
       const Spacer(),
       SvgPicture.asset(AssetImages.bellIcon, height: 21, width: 21),
-      const SizedBox(width: 20,),
+      const SizedBox(
+        width: 20,
+      ),
       CircleAvatar(
         radius: 15,
         child: ClipOval(

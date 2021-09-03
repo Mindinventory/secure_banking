@@ -32,7 +32,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 flex: 5,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                       side: const BorderSide(
@@ -52,9 +52,6 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                       children: [
                         SvgPicture.asset(
                           AssetImages.icMoneyRising,
-                        ),
-                        const SizedBox(
-                          height: 10,
                         ),
                         Text(
                           kCreditMoney,
@@ -112,7 +109,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 flex: 5,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -128,9 +125,6 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                       children: [
                         SvgPicture.asset(
                           AssetImages.icCardRising,
-                        ),
-                        const SizedBox(
-                          height: 10,
                         ),
                         Text(
                           kCreditCard,
@@ -190,7 +184,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -267,7 +261,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
