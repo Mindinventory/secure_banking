@@ -148,9 +148,9 @@ class DrawerListTile extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: tileData.isPressed ? Colors.grey : AppColors.lightGray,
-              offset: const Offset(0.0, 1.0), //(x,y)
-              blurRadius: 6.0,
+              color: tileData.isPressed ? AppColors.bgDrawerSelectedShadow : AppColors.lightGray,
+              offset: const Offset(0.0, 15.0), //(x,y)
+              blurRadius: 30.0,
             ),
           ],
           borderRadius: BorderRadius.circular(10.0),

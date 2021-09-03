@@ -39,6 +39,7 @@ Widget header(BuildContext context) {
               style: AppFontStyle.fontStyles(
                 color: AppColors.grayText,
                 fontSize: 13.0,
+                fontWeight: FontWeight.w200,
               ),
             ),
             const SizedBox(
@@ -51,7 +52,10 @@ Widget header(BuildContext context) {
         ),
       ),
       // Spacer(),
-      const Expanded(flex: 2, child: SizedBox()),
+      const Expanded(
+        flex: 2,
+        child: SizedBox(),
+      ),
       Expanded(
         flex: 3,
         child: Padding(
