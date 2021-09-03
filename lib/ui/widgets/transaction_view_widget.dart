@@ -147,6 +147,7 @@ class PremiumCardImageWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(
                     height: 20,
@@ -255,7 +256,7 @@ class PremiumCardImageWidget extends StatelessWidget {
   double rightAlignmentValue(BuildContext context) {
     if (Responsive.isTab(context)) {
       return 80;
-    } else if (Responsive.isTablePro(context)) {
+    } else if (Responsive.isTabletPro(context)) {
       return 100;
     } else if (Responsive.isMobile(context)) {
       return 30;

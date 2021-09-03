@@ -13,13 +13,9 @@ class TilesDataModel {
       TilesDataModel(
           title: kDashboard, icons: AssetImages.icDashboard, isPressed: true),
       TilesDataModel(
-          title: kAccounts,
-          icons: AssetImages.icAccount,
-          isPressed: false),
+          title: kAccounts, icons: AssetImages.icAccount, isPressed: false),
       TilesDataModel(
-          title: kTransaction,
-          icons: AssetImages.icShield,
-          isPressed: false),
+          title: kTransaction, icons: AssetImages.icShield, isPressed: false),
       TilesDataModel(
           title: kSecure, icons: AssetImages.icSettings, isPressed: false),
     ];
@@ -30,15 +26,9 @@ class TilesDataModel {
       TilesDataModel(
           title: kFeedback, icons: AssetImages.icDashboard, isPressed: false),
       TilesDataModel(
-          title: kContact,
-          icons: AssetImages.icAccount,
-          isPressed: false),
+          title: kContact, icons: AssetImages.icAccount, isPressed: false),
       TilesDataModel(
-          title: kHelp,
-          icons: AssetImages.icShield,
-          isPressed: false),
+          title: kHelp, icons: AssetImages.icShield, isPressed: false),
     ];
   }
-
-
 }

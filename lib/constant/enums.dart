@@ -6,7 +6,4 @@ T? enumFromString<T>(String key, List<T?> values) =>
 /// Example :
 ///FieldError fieldError = enumFromString<FieldError>('Empty',FieldError.Empty);
 
-
-enum FieldError {
-  empty, invalid, notMatch, invalidMinute, invalidSecond
-}
+enum FieldError { empty, invalid, notMatch, invalidMinute, invalidSecond }
