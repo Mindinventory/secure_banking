@@ -154,7 +154,7 @@ class DrawerListTile extends StatelessWidget {
             ),
           ],
           borderRadius: BorderRadius.circular(10.0),
-          color: tileData.isPressed ? AppColors.lightGray : Colors.transparent,
+          color: tileData.isPressed ? Colors.white : Colors.transparent,
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

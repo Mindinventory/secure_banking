@@ -66,16 +66,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
+                                  kCreditAmount,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppFontStyle.fontStyles(
                                     color:
@@ -138,22 +129,15 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
+                                FittedBox(
+                                  child: Text(
+                                    kCreditAmount,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: AppFontStyle.fontStyles(
+                                      color:
+                                          AppColors.textColor.withOpacity(0.46),
+                                      fontSize: 12.0,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -219,16 +203,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
+                                  kCreditAmount,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppFontStyle.fontStyles(
                                     color:
@@ -296,16 +271,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
+                                  kCreditAmount,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppFontStyle.fontStyles(
                                     color:
