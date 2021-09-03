@@ -114,10 +114,12 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0, top: 15),
-                  child: SvgPicture.asset(
+                Container(
+                  height:199,
+                  width: 293,
+                  child: Image.asset(
                     AssetImages.cardImg,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ],

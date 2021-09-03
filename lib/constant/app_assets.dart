@@ -1,6 +1,6 @@
 class AssetImages {
   static const String userIcon = 'assets/images/user.svg';
-  static const String cardImg = 'assets/images/svg_imag_card.svg';
+  static const String cardImg = 'assets/images/3.0x/card.png';
   static const String addImg = 'assets/images/add.png';
   static const String preimumCardImag = 'assets/images/img_premium_card.svg';
 
