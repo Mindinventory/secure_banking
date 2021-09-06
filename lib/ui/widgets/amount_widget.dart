@@ -32,14 +32,13 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 flex: 5,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(15.0),
                       side: const BorderSide(
                         width: 5,
                         color: AppColors.lightGray,
-                      )
-                  ),
+                      )),
                   child: Padding(
                     padding: const EdgeInsets.only(
                       left: 15.0,
@@ -52,9 +51,6 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                       children: [
                         SvgPicture.asset(
                           AssetImages.icMoneyRising,
-                        ),
-                        const SizedBox(
-                          height: 10,
                         ),
                         Text(
                           kCreditMoney,
@@ -70,16 +66,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
+                                  kCreditAmount,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppFontStyle.fontStyles(
                                     color:
@@ -94,7 +81,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color:AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
@@ -112,7 +100,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 flex: 5,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -129,9 +117,6 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                         SvgPicture.asset(
                           AssetImages.icCardRising,
                         ),
-                        const SizedBox(
-                          height: 10,
-                        ),
                         Text(
                           kCreditCard,
                           style: AppFontStyle.fontStyles(
@@ -144,22 +129,15 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
+                                FittedBox(
+                                  child: Text(
+                                    kCreditAmount,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: AppFontStyle.fontStyles(
+                                      color:
+                                          AppColors.textColor.withOpacity(0.46),
+                                      fontSize: 12.0,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -169,7 +147,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color: AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
@@ -190,7 +169,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -224,16 +203,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
+                                  kCreditAmount,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppFontStyle.fontStyles(
                                     color:
@@ -248,7 +218,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color: AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),
@@ -267,7 +238,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                 width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: AppColors.lightGray,
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -300,16 +271,7 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  kCredit,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.fontStyles(
-                                    color:
-                                        AppColors.textColor.withOpacity(0.46),
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                                Text(
-                                  kAmount,
+                                  kCreditAmount,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppFontStyle.fontStyles(
                                     color:
@@ -324,7 +286,8 @@ class _AmountCardsWidgetState extends State<AmountCardsWidget> {
                               kDate,
                               overflow: TextOverflow.ellipsis,
                               style: AppFontStyle.fontStyles(
-                                color: AppColors.chartLineColor.withOpacity(0.5),
+                                color:
+                                    AppColors.chartLineColor.withOpacity(0.5),
                                 fontSize: 10.0,
                               ),
                             ),

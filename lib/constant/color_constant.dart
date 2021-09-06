@@ -16,6 +16,7 @@ class AppColors {
   static const Color textColor = Color(0xFF00294F);
 
   static const Color bgDrawer = Color(0xFF7F8FF);
+  static const Color bgDrawerSelectedShadow = Color(0xFFdce1f8);
   static const Color icSelected = Color(0xFF0dc8e9);
   static const Color icNotSelected = Color(0xFF6d87e5);
   static const Color drawerTextSelected = Color(0xFF002A50);

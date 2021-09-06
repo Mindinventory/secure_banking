@@ -92,10 +92,11 @@ class _SideMenuState extends State<SideMenu> {
                   );
                 },
               ),
-             //const Spacer(),
+              //const Spacer(),
               SizedBox(
-                height: Responsive.isMobile(context) ?20.0:MediaQuery.of(context).size.height/3.25
-              ),
+                  height: Responsive.isMobile(context)
+                      ? 20.0
+                      : MediaQuery.of(context).size.height / 3.25),
               Image.asset(
                 AssetImages.drawerBottom,
                 // fit: BoxFit.cover,
@@ -147,13 +148,13 @@ class DrawerListTile extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: tileData.isPressed ? Colors.grey : AppColors.lightGray,
-              offset: const Offset(0.0, 1.0), //(x,y)
-              blurRadius: 6.0,
+              color: tileData.isPressed ? AppColors.bgDrawerSelectedShadow : AppColors.lightGray,
+              offset: const Offset(0.0, 15.0), //(x,y)
+              blurRadius: 30.0,
             ),
           ],
           borderRadius: BorderRadius.circular(10.0),
-          color: tileData.isPressed ? AppColors.lightGray : Colors.transparent,
+          color: tileData.isPressed ? Colors.white : Colors.transparent,
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

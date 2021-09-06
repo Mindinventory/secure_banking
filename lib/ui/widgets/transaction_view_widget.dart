@@ -31,6 +31,7 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
         Container(
           margin: const EdgeInsets.only(top: 10),
           child: Card(
+            elevation: 0.0,
             color: AppColors.lightGray,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -114,10 +115,12 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0, top: 15),
-                  child: SvgPicture.asset(
+                Container(
+                  height:199,
+                  width: 293,
+                  child: Image.asset(
                     AssetImages.cardImg,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ],
@@ -147,6 +150,7 @@ class PremiumCardImageWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(
                     height: 20,
@@ -169,7 +173,8 @@ class PremiumCardImageWidget extends StatelessWidget {
                         child: Align(
                             alignment: Alignment.center,
                             child: SvgPicture.asset(AssetImages.laptopImgBg)),
-                      )),
+                      )
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -255,7 +260,7 @@ class PremiumCardImageWidget extends StatelessWidget {
   double rightAlignmentValue(BuildContext context) {
     if (Responsive.isTab(context)) {
       return 80;
-    } else if (Responsive.isTablePro(context)) {
+    } else if (Responsive.isTabletPro(context)) {
       return 100;
     } else if (Responsive.isMobile(context)) {
       return 30;
