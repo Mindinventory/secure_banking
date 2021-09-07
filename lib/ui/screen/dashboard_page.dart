@@ -39,6 +39,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                       width: 1200,
                       child: Card(
                         color: AppColors.lightGray,
+                        elevation: 0.0,
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             side: BorderSide(
