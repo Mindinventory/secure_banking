@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constant/constant_public.dart';
@@ -29,102 +30,140 @@ class _TransactionViewWidgetState extends State<TransactionViewWidget> {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: Card(
-            elevation: 0.0,
-            color: AppColors.lightGray,
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                side: BorderSide(
-                  width: 5,
-                  color: AppColors.lightGray,
-                )),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        kTransaction,
-                        style:
-                            AppFontStyle.fontStyles(color: AppColors.textColor),
+          width:!Responsive.isMobile(context)?550:null,
+         // margin: const EdgeInsets.only(top: 10),
+          child: Column(
+            children: [
+              if(Responsive.isDesktop(context) || Responsive.isTabletPro(context))
+              Padding(
+                padding: const EdgeInsets.only(left:12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(kFeedback,
+                        style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor, fontSize: 13)),
+                    Text(kContact,
+                        style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor, fontSize: 13)),
+                    Text(kHelp,
+                        style: AppFontStyle.fontStyles(
+                            color: AppColors.textColor, fontSize: 13)),
+                    SvgPicture.asset(AssetImages.bellIcon, height: 21, width: 21),
+                    CircleAvatar(
+                      radius: 15,
+                      child: ClipOval(
+                        child: CachedNetworkImage(
+                          imageUrl:
+                          'https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80',
+                          fit: BoxFit.cover,
+                          width: 42,
+                          height: 48,
+                        ),
                       ),
-                      Image.asset(
-                        AssetImages.addImg,
-                        height: 30,
-                        width: 30,
-                      )
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                ListView.builder(
-                  itemCount: getTransactionListData.length,
-                  shrinkWrap: true,
-                  primary: false,
-                  itemBuilder: (context, index) {
-                    var transactionList = getTransactionListData[index];
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListTile(
-                        leading: SvgPicture.asset(transactionList.icon),
-                        title: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              transactionList.itemName,
-                              style: AppFontStyle.fontStyles(
-                                  color: AppColors.textColor, fontSize: 14),
+              ),
+              const SizedBox(height:25.0,),
+              Card(
+                elevation: 0.0,
+                color: AppColors.lightGray,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    side: BorderSide(
+                      width: 5,
+                      color: AppColors.lightGray,
+                    )),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            kTransaction,
+                            style:
+                                AppFontStyle.fontStyles(color: AppColors.textColor),
+                          ),
+                          Image.asset(
+                            AssetImages.addImg,
+                            height: 30,
+                            width: 30,
+                          )
+                        ],
+                      ),
+                    ),
+                    ListView.builder(
+                      itemCount: getTransactionListData.length,
+                      shrinkWrap: true,
+                      primary: false,
+                      itemBuilder: (context, index) {
+                        var transactionList = getTransactionListData[index];
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ListTile(
+                            leading: SvgPicture.asset(transactionList.icon),
+                            title: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  transactionList.itemName,
+                                  style: AppFontStyle.fontStyles(
+                                      color: AppColors.textColor, fontSize: 14),
+                                ),
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                Text(transactionList.timing,
+                                    style: AppFontStyle.fontStyles(
+                                        color: AppColors.textColor,
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400))
+                              ],
                             ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            Text(transactionList.timing,
+                            trailing: Text(
+                                '- ${String.fromCharCodes(Runes('\u0024'))}${transactionList.price}',
                                 style: AppFontStyle.fontStyles(
-                                    color: AppColors.textColor,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400))
-                          ],
-                        ),
-                        trailing: Text(
-                            '- ${String.fromCharCodes(Runes('\u0024'))}${transactionList.price}',
-                            style: AppFontStyle.fontStyles(
-                                color: AppColors.textColor, fontSize: 12)),
+                                    color: AppColors.textColor, fontSize: 12)),
+                          ),
+                        );
+                      },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 18, left: 18, right: 18),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(kMyCard,
+                              style: AppFontStyle.fontStyles(
+                                  color: AppColors.textColor)),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.more_horiz,
+                              size: 20,
+                            ),
+                          ),
+                        ],
                       ),
-                    );
-                  },
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 18, left: 18, right: 18),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(kMyCard,
-                          style: AppFontStyle.fontStyles(
-                              color: AppColors.textColor)),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.more_horiz,
-                          size: 20,
-                        ),
+                    ),
+                    Container(
+                      height:199,
+                      width: 293,
+                      child: Image.asset(
+                        AssetImages.cardImg,
+                        fit: BoxFit.contain,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height:199,
-                  width: 293,
-                  child: Image.asset(
-                    AssetImages.cardImg,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ],
