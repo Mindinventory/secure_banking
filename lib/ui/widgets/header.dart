@@ -52,11 +52,11 @@ Widget header(BuildContext context) {
         ),
       ),
       // Spacer(),
-      const Expanded(
-        flex: 2,
+     /* const Expanded(
+        flex: 3,
         child: SizedBox(),
-      ),
-      Expanded(
+      ),*/
+      /*Expanded(
         flex: 3,
         child: Padding(
           padding: const EdgeInsets.only(
@@ -92,7 +92,7 @@ Widget header(BuildContext context) {
             ],
           ),
         ),
-      ),
+      ),*/
     ],
   );
 }

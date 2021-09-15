@@ -21,7 +21,6 @@ class MyLinearChart extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-
             padding: const EdgeInsets.only(left: 10,top: 10),
             decoration: const BoxDecoration(
               color: Colors.white,

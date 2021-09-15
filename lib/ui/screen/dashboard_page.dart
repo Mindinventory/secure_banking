@@ -22,8 +22,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          if (!Responsive.isMobile(context)) header(context),
-          if (Responsive.isMobile(context)) headerMobile(context),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,12 +29,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 flex: 6,
                 child: Column(
                   children: [
+                    if (!Responsive.isMobile(context)) header(context),
+                    if (Responsive.isMobile(context)) headerMobile(context),
                     const SizedBox(height: 16.0),
                     const AmountCardsWidget(),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       height: 340,
-                      width: 1200,
+                      //width: 1200,
                       child: Card(
                         color: AppColors.lightGray,
                         elevation: 0.0,
