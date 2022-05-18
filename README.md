@@ -12,3 +12,6 @@ Here is the link of the demo,
 Checkout figma design for the same,
 
 <a href="https://dribbble.com/shots/14216372-Secure-Banking">secure banking design</a>
+
+# LICENSE!
+This template is [MIT-licensed](https://github.com/Mindinventory/secure_banking/blob/master/LICENSE "MIT-licensed").
